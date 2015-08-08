@@ -12,6 +12,7 @@ module.exports = {
 		'react/jsx-curly-spacing': [2, 'never'],
 		'react/jsx-max-props-per-line': 0,
 		'react/jsx-no-duplicate-props': [2, {ignoreCase: true}],
+		'react/jsx-no-literals': 0,
 		'react/jsx-no-undef': 2,
 		'react/jsx-quotes': [2, 'single', 'avoid-escape'],
 		'react/jsx-sort-prop-types': 0,
