@@ -13,12 +13,13 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "node test/test.js"
+    "test": "ava"
   },
   "files": [
     "index.js"
   ],
   "keywords": [
+    "❤️",
     "react",
     "jsx",
     "eslintconfig",
@@ -49,7 +50,7 @@
     "simple"
   ],
   "devDependencies": {
-    "ava": "0.0.4",
+    "ava": "*",
     "clear-require": "^1.0.1",
     "eslint": "^1.1.0",
     "eslint-plugin-react": "^3.2.1",
