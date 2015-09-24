@@ -14,7 +14,6 @@ module.exports = {
 		'react/jsx-no-duplicate-props': [2, {ignoreCase: true}],
 		'react/jsx-no-literals': 0,
 		'react/jsx-no-undef': 2,
-		'react/jsx-quotes': [2, 'single', 'avoid-escape'],
 		'react/jsx-sort-prop-types': 0,
 		'react/jsx-sort-props': 0,
 		'react/jsx-uses-react': 2,
