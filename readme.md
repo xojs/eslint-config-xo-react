@@ -42,6 +42,24 @@ You can also mix it with a sub-config:
 ```
 
 
+## Tip
+
+### Use with XO
+
+```
+$ npm install --save-dev eslint-config-xo-react eslint-plugin-react
+```
+
+```json
+{
+	"name": "my-awesome-project",
+	"xo": {
+		"extends": "xo-react"
+	}
+}
+```
+
+
 ## Related
 
 - [eslint-config-xo](https://github.com/sindresorhus/eslint-config-xo) - ESLint shareable config for XO
