@@ -1,7 +1,9 @@
 'use strict';
 module.exports = {
-	ecmaFeatures: {
-		jsx: true
+	parserOptions: {
+		ecmaFeatures: {
+			jsx: true
+		}
 	},
 	plugins: [
 		'react'
