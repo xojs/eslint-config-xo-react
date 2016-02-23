@@ -21,6 +21,7 @@ module.exports = {
 		'react/jsx-no-duplicate-props': [2, {ignoreCase: true}],
 		'react/jsx-no-undef': 2,
 		'react/jsx-pascal-case': 2,
+		'react/jsx-space-before-closing': [2, 'never'],
 		'react/jsx-uses-react': 2,
 		'react/jsx-uses-vars': 2,
 		'react/no-danger': 2,
