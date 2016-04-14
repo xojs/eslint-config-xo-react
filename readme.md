@@ -64,6 +64,7 @@ $ npm install --save-dev eslint-config-xo-react eslint-plugin-react
 
 - [eslint-config-xo](https://github.com/sindresorhus/eslint-config-xo) - ESLint shareable config for XO
 - [eslint-config-xo-space](https://github.com/sindresorhus/eslint-config-xo-space) - ESLint shareable config for XO with 2-space indent
+- [eslint-config-xo-react-space](https://github.com/zckrs/eslint-config-xo-react-space) - ESLint shareable config for XO React with 2-space indent
 
 
 ## License
