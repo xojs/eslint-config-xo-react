@@ -33,7 +33,15 @@ Or to `.eslintrc`:
 }
 ```
 
-You can also mix it with a sub-config:
+Use the `space` sub-config if you want 2 space indentation instead of tabs:
+
+```json
+{
+	"extends": ["xo", "xo-react/space"]
+}
+```
+
+You can also mix it with a XO sub-config:
 
 ```json
 {
@@ -63,7 +71,6 @@ $ npm install --save-dev eslint-config-xo-react eslint-plugin-react
 ## Related
 
 - [eslint-config-xo](https://github.com/sindresorhus/eslint-config-xo) - ESLint shareable config for XO
-- [eslint-config-xo-space](https://github.com/sindresorhus/eslint-config-xo-space) - ESLint shareable config for XO with 2-space indent
 
 
 ## License
