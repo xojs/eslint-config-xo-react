@@ -2,8 +2,6 @@
 
 > ESLint [shareable config](http://eslint.org/docs/developer-guide/shareable-configs.html) for React to be used with [eslint-config-xo](https://github.com/sindresorhus/eslint-config-xo)
 
-This is for advanced users. You probably want to use [XO](https://github.com/sindresorhus/xo) directly.
-
 
 ## Install
 
@@ -14,7 +12,7 @@ $ npm install --save-dev eslint-config-xo eslint-config-xo-react eslint-plugin-r
 
 ## Usage
 
-Add some ESLint config to your `package.json`:
+Add some ESLint config to your package.json:
 
 ```json
 {
@@ -25,7 +23,7 @@ Add some ESLint config to your `package.json`:
 }
 ```
 
-Or to `.eslintrc`:
+Or to .eslintrc:
 
 ```json
 {
@@ -41,7 +39,7 @@ Use the `space` sub-config if you want 2 space indentation instead of tabs:
 }
 ```
 
-You can also mix it with a XO sub-config:
+You can also mix it with a [XO](https://github.com/sindresorhus/xo) sub-config:
 
 ```json
 {
@@ -71,8 +69,9 @@ $ npm install --save-dev eslint-config-xo-react eslint-plugin-react
 ## Related
 
 - [eslint-config-xo](https://github.com/sindresorhus/eslint-config-xo) - ESLint shareable config for XO
+- [XO](https://github.com/sindresorhus/xo)
 
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)
