@@ -3,9 +3,7 @@ import isPlainObj from 'is-plain-obj';
 import tempWrite from 'temp-write';
 import eslint from 'eslint';
 
-function hasRule(errors, ruleId) {
-	return errors.some(x => x.ruleId === ruleId);
-}
+const hasRule = (errors, ruleId) => errors.some(x => x.ruleId === ruleId);
 
 function runEslint(str, conf) {
 	const linter = new eslint.CLIEngine({
