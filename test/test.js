@@ -21,7 +21,7 @@ test('main', t => {
 	t.true(isPlainObj(conf.rules));
 
 	const errors = runEslint('var app = <div className="foo">Unicorn</div>', conf);
-	t.is(errors[0].ruleId, 'react/react-in-jsx-scope');
+	t.true(hasRule(errors, 'react/react-in-jsx-scope'));
 });
 
 test('space', t => {
