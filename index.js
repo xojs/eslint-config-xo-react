@@ -11,6 +11,7 @@ module.exports = {
 	rules: {
 		'react/forbid-component-props': 2,
 		'react/no-danger': 2,
+		'react/no-danger-with-children': 2,
 		'react/no-deprecated': 2,
 		'react/no-did-update-set-state': 2,
 		'react/no-direct-mutation-state': 2,
