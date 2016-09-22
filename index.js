@@ -9,6 +9,7 @@ module.exports = {
 		'react'
 	],
 	rules: {
+		'react/forbid-component-props': 2,
 		'react/no-danger': 2,
 		'react/no-deprecated': 2,
 		'react/no-did-update-set-state': 2,
