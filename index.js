@@ -24,6 +24,7 @@ module.exports = {
 		'react/prop-types': 2,
 		'react/react-in-jsx-scope': 2,
 		'react/self-closing-comp': 2,
+		'react/style-prop-object': 2,
 		'react/jsx-boolean-value': 2,
 		'react/jsx-closing-bracket-location': [2, 'props-aligned'],
 		'react/jsx-curly-spacing': [2, 'never'],
