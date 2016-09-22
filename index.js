@@ -20,6 +20,7 @@ module.exports = {
 		'react/no-is-mounted': 2,
 		'react/no-render-return-value': 2,
 		'react/no-string-refs': 2,
+		'react/no-unescaped-entities': 2,
 		'react/no-unknown-property': 2,
 		'react/no-unused-prop-types': 2,
 		'react/prop-types': 2,
