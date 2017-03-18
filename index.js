@@ -45,6 +45,11 @@ module.exports = {
 		'react/jsx-no-target-blank': 2,
 		'react/jsx-no-undef': 2,
 		'react/jsx-pascal-case': 2,
+		'jsx-sort-props': [2, {
+			callbacksLast: true,
+			shorthandFirst: true,
+			noSortAlphabetically: true
+		}],
 		'react/jsx-space-before-closing': [2, 'never'],
 		'react/jsx-tag-spacing': [2, {
 			closingSlash: 'never',
