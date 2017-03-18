@@ -10,6 +10,7 @@ module.exports = {
 	],
 	rules: {
 		'react/forbid-component-props': 2,
+		'react/no-array-index-key': 2,
 		'react/no-children-prop': 2,
 		'react/no-danger': 2,
 		'react/no-danger-with-children': 2,
