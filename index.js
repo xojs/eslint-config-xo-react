@@ -29,6 +29,7 @@ module.exports = {
 		'react/require-default-props': 2,
 		'react/self-closing-comp': 2,
 		'react/style-prop-object': 2,
+		'react/void-dom-elements-no-children': 2,
 		'react/jsx-boolean-value': 2,
 		'react/jsx-closing-bracket-location': [2, 'props-aligned'],
 		'react/jsx-curly-spacing': [2, 'never'],
