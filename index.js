@@ -26,6 +26,7 @@ module.exports = {
 		'react/no-unused-prop-types': 2,
 		'react/prop-types': 2,
 		'react/react-in-jsx-scope': 2,
+		'react/require-default-props': 2,
 		'react/self-closing-comp': 2,
 		'react/style-prop-object': 2,
 		'react/jsx-boolean-value': 2,
