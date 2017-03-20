@@ -33,3 +33,10 @@ test('space', t => {
 	const errors = runEslint('<App>\n\t<Hello/>\n</App>', conf);
 	t.true(hasRule(errors, 'react/jsx-indent'));
 });
+
+test('no errors', t => {
+	const conf = require('../');
+
+	const errors = runEslint('var React = require(\'react\');\nvar el = <div/>;', conf);
+	t.deepEqual(errors, []);
+});

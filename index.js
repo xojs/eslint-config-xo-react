@@ -51,7 +51,7 @@ module.exports = {
 		'react/jsx-no-target-blank': 'error',
 		'react/jsx-no-undef': 'error',
 		'react/jsx-pascal-case': 'error',
-		'jsx-sort-props': ['error', {
+		'react/jsx-sort-props': ['error', {
 			callbacksLast: true,
 			shorthandFirst: true,
 			noSortAlphabetically: true
@@ -59,7 +59,7 @@ module.exports = {
 		'react/jsx-space-before-closing': ['error', 'never'],
 		'react/jsx-tag-spacing': ['error', {
 			closingSlash: 'never',
-			beforeSelfClosing: 'always',
+			beforeSelfClosing: 'never',
 			afterOpening: 'never'
 		}],
 		'react/jsx-uses-react': 'error',
