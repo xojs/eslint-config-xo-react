@@ -35,7 +35,7 @@ test('space', t => {
 });
 
 test('no errors', t => {
-	const conf = require('../');
+	const conf = require('..');
 
 	const errors = runEslint('var React = require(\'react\');\nvar el = <div/>;', conf);
 	t.deepEqual(errors, []);
