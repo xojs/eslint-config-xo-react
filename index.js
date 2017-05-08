@@ -55,7 +55,8 @@ module.exports = {
 		'react/jsx-sort-props': ['error', {
 			callbacksLast: true,
 			shorthandFirst: true,
-			noSortAlphabetically: true
+			noSortAlphabetically: true,
+			reservedFirst: true
 		}],
 		'react/jsx-tag-spacing': ['error', {
 			closingSlash: 'never',
