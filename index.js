@@ -56,7 +56,6 @@ module.exports = {
 			shorthandFirst: true,
 			noSortAlphabetically: true
 		}],
-		'react/jsx-space-before-closing': ['error', 'never'],
 		'react/jsx-tag-spacing': ['error', {
 			closingSlash: 'never',
 			beforeSelfClosing: 'never',
