@@ -35,6 +35,7 @@ module.exports = {
 		'react/void-dom-elements-no-children': 'error',
 		'react/jsx-boolean-value': 'error',
 		'react/jsx-closing-bracket-location': ['error', 'tag-aligned'],
+		'react/jsx-closing-tag-location': 'error',
 		'react/jsx-curly-spacing': ['error', 'never'],
 		'react/jsx-equals-spacing': ['error', 'never'],
 		'react/jsx-first-prop-new-line': ['error', 'multiline'],
