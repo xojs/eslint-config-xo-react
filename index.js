@@ -23,6 +23,7 @@ module.exports = {
 		'react/no-is-mounted': 'error',
 		'react/no-redundant-should-component-update': 'error',
 		'react/no-render-return-value': 'error',
+		'react/no-typos': 'error',
 		'react/no-string-refs': 'error',
 		'react/no-unescaped-entities': 'error',
 		'react/no-unknown-property': 'error',
