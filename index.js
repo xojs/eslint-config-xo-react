@@ -57,6 +57,7 @@ module.exports = {
 		}],
 		'react/jsx-no-target-blank': 'error',
 		'react/jsx-no-undef': 'error',
+		'react/jsx-curly-brace-presence': ['error', 'never'],
 		'react/jsx-pascal-case': 'error',
 		'react/jsx-sort-props': ['error', {
 			callbacksLast: true,
