@@ -76,6 +76,14 @@ module.exports = {
 		}],
 		'react/jsx-uses-react': 'error',
 		'react/jsx-uses-vars': 'error',
-		'react/jsx-wrap-multilines': 'error'
+		'react/jsx-wrap-multilines': ['error', {
+			declaration: 'parens-new-line',
+			assignment: 'parens-new-line',
+			return: 'parens-new-line',
+			arrow: 'parens-new-line',
+			condition: 'ignore',
+			logical: 'ignore',
+			prop: 'ignore'
+		}]
 	}
 };
