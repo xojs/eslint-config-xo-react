@@ -10,6 +10,7 @@ module.exports = {
 	],
 	rules: {
 		'react/boolean-prop-naming': 'error',
+		'react/button-has-type': 'error',
 		'react/default-props-match-prop-types': 'error',
 		'react/destructuring-assignment': ['error', 'always'],
 		'react/forbid-component-props': 'error',
