@@ -13,6 +13,7 @@ module.exports = {
 		'react/default-props-match-prop-types': 'error',
 		'react/destructuring-assignment': ['error', 'always'],
 		'react/forbid-component-props': 'error',
+		'react/no-access-state-in-setstate': 'error',
 		'react/no-array-index-key': 'error',
 		'react/no-children-prop': 'error',
 		'react/no-danger': 'error',
