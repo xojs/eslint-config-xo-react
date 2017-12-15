@@ -35,7 +35,9 @@ module.exports = {
 		'react/no-will-update-set-state': 'error',
 		'react/prop-types': 'error',
 		'react/react-in-jsx-scope': 'error',
-		'react/require-default-props': 'error',
+		'react/require-default-props': ['error', {
+			forbidDefaultForRequired: true
+		}],
 		'react/self-closing-comp': 'error',
 		'react/style-prop-object': 'error',
 		'react/void-dom-elements-no-children': 'error',
