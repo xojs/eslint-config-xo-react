@@ -40,3 +40,19 @@ test('no errors', t => {
 	const errors = runEslint('var React = require(\'react\');\nvar el = <div/>;', conf);
 	t.deepEqual(errors, []);
 });
+
+// react/jsx-one-expression-per-line
+const oneExpression = `
+var React = require('react');
+var el = (
+	<div>
+		hello
+	</div>
+);
+`
+test.failing("doesn't complain incorrectly about newlines", t => {
+	const conf = require('..');
+
+	const errors = runEslint(oneExpression, conf);
+	t.deepEqual(errors, []);
+})
