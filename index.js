@@ -54,7 +54,12 @@ module.exports = {
 			maximum: 1,
 			when: 'multiline'
 		}],
-		'react/jsx-no-bind': 'error',
+		'react/jsx-no-bind': [
+			'error',
+			{
+				allowArrowFunctions: true
+			}
+		],
 		'react/jsx-no-comment-textnodes': 'error',
 		'react/jsx-no-duplicate-props': ['error', {
 			ignoreCase: true
