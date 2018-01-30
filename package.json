@@ -53,12 +53,12 @@
 	"devDependencies": {
 		"ava": "*",
 		"eslint": "^4.10.0",
-		"eslint-plugin-react": "^7.5.1",
+		"eslint-plugin-react": "^7.6.1",
 		"is-plain-obj": "^1.0.0",
 		"temp-write": "^3.1.0"
 	},
 	"peerDependencies": {
 		"eslint": ">=4",
-		"eslint-plugin-react": ">=7.5.1"
+		"eslint-plugin-react": ">=7.6.1"
 	}
 }
