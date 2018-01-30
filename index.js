@@ -40,7 +40,10 @@ module.exports = {
 		'react/style-prop-object': 'error',
 		'react/void-dom-elements-no-children': 'error',
 		'react/jsx-boolean-value': 'error',
-		'react/jsx-closing-bracket-location': ['error', 'tag-aligned'],
+		'react/jsx-closing-bracket-location': ['error', {
+			nonEmpty: 'tag-aligned',
+			selfClosing: false
+		}],
 		'react/jsx-closing-tag-location': 'error',
 		'react/jsx-curly-spacing': ['error', 'never'],
 		'react/jsx-equals-spacing': ['error', 'never'],
