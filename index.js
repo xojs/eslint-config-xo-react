@@ -11,6 +11,7 @@ module.exports = {
 	rules: {
 		'react/boolean-prop-naming': 'error',
 		'react/button-has-type': 'error',
+		'react/jsx-child-element-spacing': 'error',
 		'react/default-props-match-prop-types': 'error',
 		'react/no-access-state-in-setstate': 'error',
 		'react/no-array-index-key': 'error',
