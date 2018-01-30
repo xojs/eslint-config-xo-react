@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-xo-react",
-	"version": "0.15.0",
+	"version": "0.16.0",
 	"description": "ESLint shareable config for React to be used with eslint-config-xo",
 	"license": "MIT",
 	"repository": "sindresorhus/eslint-config-xo-react",
