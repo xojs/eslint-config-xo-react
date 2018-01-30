@@ -50,7 +50,7 @@ module.exports = {
 		'react/jsx-indent-props': ['error', 'tab'],
 		'react/jsx-key': 'error',
 		'react/jsx-max-props-per-line': ['error', {
-			maximum: 1,
+			maximum: 3,
 			when: 'multiline'
 		}],
 		'react/jsx-no-bind': [
