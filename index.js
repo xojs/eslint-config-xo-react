@@ -44,7 +44,6 @@ module.exports = {
 		'react/jsx-closing-tag-location': 'error',
 		'react/jsx-curly-spacing': ['error', 'never'],
 		'react/jsx-equals-spacing': ['error', 'never'],
-		'react/jsx-first-prop-new-line': ['error', 'multiline'],
 		'react/jsx-indent': ['error', 'tab'],
 		'react/jsx-indent-props': ['error', 'tab'],
 		'react/jsx-key': 'error',
