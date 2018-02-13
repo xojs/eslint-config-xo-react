@@ -1,6 +1,6 @@
-# eslint-config-xo-react [![Build Status](https://travis-ci.org/sindresorhus/eslint-config-xo-react.svg?branch=master)](https://travis-ci.org/sindresorhus/eslint-config-xo-react)
+# eslint-config-xo-react [![Build Status](https://travis-ci.org/xojs/eslint-config-xo-react.svg?branch=master)](https://travis-ci.org/xojs/eslint-config-xo-react)
 
-> ESLint [shareable config](http://eslint.org/docs/developer-guide/shareable-configs.html) for React to be used with [eslint-config-xo](https://github.com/sindresorhus/eslint-config-xo)
+> ESLint [shareable config](http://eslint.org/docs/developer-guide/shareable-configs.html) for React to be used with [eslint-config-xo](https://github.com/xojs/eslint-config-xo)
 
 
 ## Install
@@ -39,7 +39,7 @@ Use the `space` sub-config if you want 2 space indentation instead of tabs:
 }
 ```
 
-You can also mix it with a [XO](https://github.com/sindresorhus/xo) sub-config:
+You can also mix it with a [XO](https://github.com/xojs/xo) sub-config:
 
 ```json
 {
@@ -68,8 +68,8 @@ $ npm install --save-dev eslint-config-xo-react eslint-plugin-react
 
 ## Related
 
-- [eslint-config-xo](https://github.com/sindresorhus/eslint-config-xo) - ESLint shareable config for XO
-- [XO](https://github.com/sindresorhus/xo)
+- [eslint-config-xo](https://github.com/xojs/eslint-config-xo) - ESLint shareable config for XO
+- [XO](https://github.com/xojs/xo)
 
 
 ## License
