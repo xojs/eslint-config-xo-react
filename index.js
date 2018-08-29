@@ -69,7 +69,8 @@ module.exports = {
 		}],
 		'react/jsx-no-target-blank': 'error',
 		'react/jsx-no-undef': 'error',
-		// 'react/jsx-one-expression-per-line': 'error',
+		// Disabled for now as it produces too many errors
+		// 'react/jsx-one-expression-per-line': ['error', {allow: 'single-child'}],
 		'react/jsx-curly-brace-presence': ['error', 'never'],
 		'react/jsx-pascal-case': 'error',
 		'react/jsx-sort-props': ['error', {
