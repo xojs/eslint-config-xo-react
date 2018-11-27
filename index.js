@@ -33,7 +33,6 @@ module.exports = {
 		'react/no-unsafe': 'error',
 		'react/no-unused-prop-types': 'error',
 		'react/no-unused-state': 'error',
-		'react/no-will-update-set-state': 'error',
 		'react/prop-types': 'error',
 		'react/react-in-jsx-scope': 'error',
 		'react/require-default-props': ['error', {
