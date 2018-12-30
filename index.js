@@ -50,7 +50,7 @@ module.exports = {
 		'react/jsx-closing-tag-location': 'error',
 		'react/jsx-curly-spacing': ['error', 'never'],
 		'react/jsx-equals-spacing': ['error', 'never'],
-		'react/jsx-indent': ['error', 'tab'],
+		'react/jsx-indent': ['error', 'tab', {checkAttributes: true}],
 		'react/jsx-indent-props': ['error', 'tab'],
 		'react/jsx-key': 'error',
 		'react/jsx-max-props-per-line': ['error', {
