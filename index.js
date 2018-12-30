@@ -72,6 +72,7 @@ module.exports = {
 		// Disabled for now as it produces too many errors
 		// 'react/jsx-one-expression-per-line': ['error', {allow: 'single-child'}],
 		'react/jsx-curly-brace-presence': ['error', 'never'],
+		'react/jsx-fragments': ['error', 'syntax'],
 		'react/jsx-pascal-case': 'error',
 		'react/jsx-sort-props': ['error', {
 			callbacksLast: true,
