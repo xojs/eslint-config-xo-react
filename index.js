@@ -41,27 +41,51 @@ module.exports = {
 		'react/no-will-update-set-state': 'error',
 		'react/prop-types': 'error',
 		'react/react-in-jsx-scope': 'error',
-		'react/require-default-props': ['error', {
-			forbidDefaultForRequired: true
-		}],
+		'react/require-default-props': [
+			'error',
+			{
+				forbidDefaultForRequired: true
+			}
+		],
 		'react/self-closing-comp': 'error',
 		'react/style-prop-object': 'error',
 		'react/void-dom-elements-no-children': 'error',
 		'react/jsx-boolean-value': 'error',
-		'react/jsx-closing-bracket-location': ['error', {
-			nonEmpty: 'tag-aligned',
-			selfClosing: false
-		}],
+		'react/jsx-closing-bracket-location': [
+			'error',
+			{
+				nonEmpty: 'tag-aligned',
+				selfClosing: false
+			}
+		],
 		'react/jsx-closing-tag-location': 'error',
-		'react/jsx-curly-spacing': ['error', 'never'],
-		'react/jsx-equals-spacing': ['error', 'never'],
-		'react/jsx-indent': ['error', 'tab', {checkAttributes: true}],
-		'react/jsx-indent-props': ['error', 'tab'],
+		'react/jsx-curly-spacing': [
+			'error',
+			'never'
+		],
+		'react/jsx-equals-spacing': [
+			'error',
+			'never'
+		],
+		'react/jsx-indent': [
+			'error',
+			'tab',
+			{
+				checkAttributes: true
+			}
+		],
+		'react/jsx-indent-props': [
+			'error',
+			'tab'
+		],
 		'react/jsx-key': 'error',
-		'react/jsx-max-props-per-line': ['error', {
-			maximum: 3,
-			when: 'multiline'
-		}],
+		'react/jsx-max-props-per-line': [
+			'error',
+			{
+				maximum: 3,
+				when: 'multiline'
+			}
+		],
 		'react/jsx-no-bind': [
 			'error',
 			{
@@ -69,38 +93,56 @@ module.exports = {
 			}
 		],
 		'react/jsx-no-comment-textnodes': 'error',
-		'react/jsx-no-duplicate-props': ['error', {
-			ignoreCase: true
-		}],
+		'react/jsx-no-duplicate-props': [
+			'error',
+			{
+				ignoreCase: true
+			}
+		],
 		'react/jsx-no-target-blank': 'error',
 		'react/jsx-no-undef': 'error',
 		// Disabled for now as it produces too many errors
 		// 'react/jsx-one-expression-per-line': ['error', {allow: 'single-child'}],
-		'react/jsx-curly-brace-presence': ['error', 'never'],
-		'react/jsx-fragments': ['error', 'syntax'],
+		'react/jsx-curly-brace-presence': [
+			'error',
+			'never'
+		],
+		'react/jsx-fragments': [
+			'error',
+			'syntax'
+		],
 		'react/jsx-pascal-case': 'error',
-		'react/jsx-sort-props': ['error', {
-			callbacksLast: true,
-			shorthandFirst: true,
-			noSortAlphabetically: true,
-			reservedFirst: true
-		}],
-		'react/jsx-tag-spacing': ['error', {
-			closingSlash: 'never',
-			beforeSelfClosing: 'never',
-			afterOpening: 'never',
-			beforeClosing: 'never'
-		}],
+		'react/jsx-sort-props': [
+			'error',
+			{
+				callbacksLast: true,
+				shorthandFirst: true,
+				noSortAlphabetically: true,
+				reservedFirst: true
+			}
+		],
+		'react/jsx-tag-spacing': [
+			'error',
+			{
+				closingSlash: 'never',
+				beforeSelfClosing: 'never',
+				afterOpening: 'never',
+				beforeClosing: 'never'
+			}
+		],
 		'react/jsx-uses-react': 'error',
 		'react/jsx-uses-vars': 'error',
-		'react/jsx-wrap-multilines': ['error', {
-			declaration: 'parens-new-line',
-			assignment: 'parens-new-line',
-			return: 'parens-new-line',
-			arrow: 'parens-new-line',
-			condition: 'ignore',
-			logical: 'ignore',
-			prop: 'ignore'
-		}]
+		'react/jsx-wrap-multilines': [
+			'error',
+			{
+				declaration: 'parens-new-line',
+				assignment: 'parens-new-line',
+				return: 'parens-new-line',
+				arrow: 'parens-new-line',
+				condition: 'ignore',
+				logical: 'ignore',
+				prop: 'ignore'
+			}
+		]
 	}
 };
