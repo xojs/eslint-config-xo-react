@@ -8,6 +8,11 @@ module.exports = {
 	plugins: [
 		'react'
 	],
+	settings: {
+		react: {
+			version: 'detect'
+		}
+	},
 	rules: {
 		'react/boolean-prop-naming': 'error',
 		'react/button-has-type': 'error',
