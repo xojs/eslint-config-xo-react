@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ npm install --save-dev eslint-config-xo eslint-config-xo-react eslint-plugin-react
+$ npm install --save-dev eslint-config-xo eslint-config-xo-react eslint-plugin-react eslint-plugin-react-hooks
 ```
 
 
@@ -18,7 +18,10 @@ Add some ESLint config to your package.json:
 {
 	"name": "my-awesome-project",
 	"eslintConfig": {
-		"extends": ["xo", "xo-react"]
+		"extends": [
+			"xo",
+			"xo-react"
+		]
 	}
 }
 ```
@@ -27,7 +30,10 @@ Or to .eslintrc:
 
 ```json
 {
-	"extends": ["xo", "xo-react"]
+	"extends": [
+		"xo",
+		"xo-react"
+	]
 }
 ```
 
@@ -35,7 +41,10 @@ Use the `space` sub-config if you want 2 space indentation instead of tabs:
 
 ```json
 {
-	"extends": ["xo", "xo-react/space"]
+	"extends": [
+		"xo",
+		"xo-react/space"
+	]
 }
 ```
 
@@ -43,7 +52,10 @@ You can also mix it with a [XO](https://github.com/xojs/xo) sub-config:
 
 ```json
 {
-	"extends": ["xo/esnext", "xo-react"]
+	"extends": [
+		"xo/esnext",
+		"xo-react"
+	]
 }
 ```
 
@@ -53,7 +65,7 @@ You can also mix it with a [XO](https://github.com/xojs/xo) sub-config:
 ### Use with XO
 
 ```
-$ npm install --save-dev eslint-config-xo-react eslint-plugin-react
+$ npm install --save-dev eslint-config-xo-react eslint-plugin-react eslint-plugin-react-hooks
 ```
 
 ```json

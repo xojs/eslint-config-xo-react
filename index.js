@@ -6,7 +6,8 @@ module.exports = {
 		}
 	},
 	plugins: [
-		'react'
+		'react',
+		'react-hooks'
 	],
 	settings: {
 		react: {
@@ -142,6 +143,13 @@ module.exports = {
 				logical: 'ignore',
 				prop: 'ignore'
 			}
-		]
+		],
+
+		'react-hooks/rules-of-hooks': 'error',
+
+		// TODO: Make this an `error`.
+		// The rule needs to be more stable first, see:
+		// https://github.com/facebook/react/issues/14920
+		'react-hooks/exhaustive-deps': 'warn'
 	}
 };
