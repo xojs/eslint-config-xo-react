@@ -111,7 +111,12 @@ module.exports = {
 			'error',
 			'syntax'
 		],
-		'react/jsx-pascal-case': 'error',
+		'react/jsx-pascal-case': [
+			'error',
+			{
+				allowAllCaps: true,
+			}
+		],
 		'react/jsx-sort-props': [
 			'error',
 			{
