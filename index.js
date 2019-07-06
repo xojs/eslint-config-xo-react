@@ -102,7 +102,12 @@ module.exports = {
 			'error',
 			'tab'
 		],
-		'react/jsx-key': 'error',
+		'react/jsx-key': [
+			'error',
+			{
+				checkFragmentShorthand: true
+			}
+		],
 		'react/jsx-max-props-per-line': [
 			'error',
 			{
