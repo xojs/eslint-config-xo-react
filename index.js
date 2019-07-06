@@ -129,6 +129,7 @@ module.exports = {
 			'syntax'
 		],
 		'react/jsx-pascal-case': 'error',
+		'react/jsx-props-no-multi-spaces': 'error',
 		'react/jsx-sort-props': [
 			'error',
 			{
