@@ -75,6 +75,13 @@ module.exports = {
 			}
 		],
 		'react/jsx-closing-tag-location': 'error',
+		'react/jsx-curly-newline': [
+			'error',
+			{
+				multiline: 'consistent',
+				singleline: 'forbid'
+			}
+		],
 		'react/jsx-curly-spacing': [
 			'error',
 			'never'
