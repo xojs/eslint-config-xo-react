@@ -58,6 +58,10 @@ module.exports = {
 			}
 		],
 		'react/self-closing-comp': 'error',
+		'react/state-in-constructor': [
+			'error',
+			'never'
+		],
 		'react/static-property-placement': 'error',
 		'react/style-prop-object': 'error',
 		'react/void-dom-elements-no-children': 'error',
