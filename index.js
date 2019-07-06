@@ -77,7 +77,8 @@ module.exports = {
 			'error',
 			'tab',
 			{
-				checkAttributes: true
+				checkAttributes: true,
+				indentLogicalExpressions: true
 			}
 		],
 		'react/jsx-indent-props': [
