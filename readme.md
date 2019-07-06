@@ -82,8 +82,3 @@ $ npm install --save-dev eslint-config-xo-react eslint-plugin-react eslint-plugi
 
 - [eslint-config-xo](https://github.com/xojs/eslint-config-xo) - ESLint shareable config for XO
 - [XO](https://github.com/xojs/xo)
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)
