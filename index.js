@@ -15,7 +15,12 @@ module.exports = {
 		}
 	},
 	rules: {
-		'react/boolean-prop-naming': 'error',
+		'react/boolean-prop-naming': [
+			'error',
+			{
+				validateNested: true
+			}
+		],
 		'react/button-has-type': 'error',
 		'react/jsx-child-element-spacing': 'error',
 		'react/default-props-match-prop-types': 'error',
