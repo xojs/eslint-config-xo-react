@@ -51,16 +51,17 @@
 		"simple"
 	],
 	"devDependencies": {
-		"ava": "^1.2.1",
-		"eslint": "^5.15.0",
-		"eslint-plugin-react": "^7.12.4",
-		"eslint-plugin-react-hooks": "^1.4.0",
-		"is-plain-obj": "^1.0.0",
-		"temp-write": "^3.1.0"
+		"ava": "^2.1.0",
+		"eslint": "^6.0.1",
+		"eslint-plugin-react": "^7.14.2",
+		"eslint-plugin-react-hooks": "^1.6.1",
+		"is-plain-obj": "^2.0.0",
+		"react": "^16.8.6",
+		"temp-write": "^4.0.0"
 	},
 	"peerDependencies": {
-		"eslint": ">=5",
-		"eslint-plugin-react": ">=7.12.3",
-		"eslint-plugin-react-hooks": ">=1.4.0"
+		"eslint": ">=6",
+		"eslint-plugin-react": ">=7.14.2",
+		"eslint-plugin-react-hooks": ">=1.6.1"
 	}
 }

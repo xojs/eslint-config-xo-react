@@ -146,10 +146,6 @@ module.exports = {
 		],
 
 		'react-hooks/rules-of-hooks': 'error',
-
-		// TODO: Make this an `error`.
-		// The rule needs to be more stable first, see:
-		// https://github.com/facebook/react/issues/14920
 		'react-hooks/exhaustive-deps': 'warn'
 	}
 };
