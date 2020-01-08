@@ -4,13 +4,14 @@
 	"description": "ESLint shareable config for React to be used with eslint-config-xo",
 	"license": "MIT",
 	"repository": "xojs/eslint-config-xo-react",
+	"funding": "https://github.com/sponsors/sindresorhus",
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
 		"url": "sindresorhus.com"
 	},
 	"engines": {
-		"node": ">=6"
+		"node": ">=10"
 	},
 	"scripts": {
 		"test": "ava"
@@ -20,7 +21,6 @@
 		"space.js"
 	],
 	"keywords": [
-		"❤️",
 		"react",
 		"jsx",
 		"eslintconfig",
@@ -53,15 +53,15 @@
 	"devDependencies": {
 		"ava": "^2.1.0",
 		"eslint": "^6.0.1",
-		"eslint-plugin-react": "^7.14.2",
-		"eslint-plugin-react-hooks": "^1.6.1",
+		"eslint-plugin-react": "^7.17.0",
+		"eslint-plugin-react-hooks": "^2.3.0",
 		"is-plain-obj": "^2.0.0",
 		"react": "^16.8.6",
 		"temp-write": "^4.0.0"
 	},
 	"peerDependencies": {
 		"eslint": ">=6",
-		"eslint-plugin-react": ">=7.14.2",
-		"eslint-plugin-react-hooks": ">=1.6.1"
+		"eslint-plugin-react": ">=7.17.0",
+		"eslint-plugin-react-hooks": ">=2.3.0"
 	}
 }

@@ -2,13 +2,11 @@
 
 > ESLint [shareable config](http://eslint.org/docs/developer-guide/shareable-configs.html) for React to be used with [eslint-config-xo](https://github.com/xojs/eslint-config-xo)
 
-
 ## Install
 
 ```
 $ npm install --save-dev eslint-config-xo eslint-config-xo-react eslint-plugin-react eslint-plugin-react-hooks
 ```
-
 
 ## Usage
 
@@ -59,7 +57,6 @@ You can also mix it with a [XO](https://github.com/xojs/xo) sub-config:
 }
 ```
 
-
 ## Tip
 
 ### Use with XO
@@ -76,7 +73,6 @@ $ npm install --save-dev eslint-config-xo-react eslint-plugin-react eslint-plugi
 	}
 }
 ```
-
 
 ## Related
 
