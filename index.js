@@ -90,6 +90,7 @@ module.exports = {
 			'error',
 			'never'
 		],
+		'react/jsx-first-prop-new-line': 'error',
 		'react/jsx-indent': [
 			'error',
 			'tab',
