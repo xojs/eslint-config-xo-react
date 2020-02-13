@@ -24,6 +24,13 @@ module.exports = {
 		'react/button-has-type': 'error',
 		'react/jsx-child-element-spacing': 'error',
 		'react/default-props-match-prop-types': 'error',
+		'react/function-component-definition': [
+			'error',
+			{
+				namedComponents: 'arrow-function',
+				unnamedComponents: 'arrow-function'
+			}
+		],
 		'react/no-access-state-in-setstate': 'error',
 		'react/no-array-index-key': 'error',
 		'react/no-children-prop': 'error',
@@ -55,7 +62,8 @@ module.exports = {
 		'react/require-default-props': [
 			'error',
 			{
-				forbidDefaultForRequired: true
+				forbidDefaultForRequired: true,
+				ignoreFunctionalComponents: true
 			}
 		],
 		'react/self-closing-comp': 'error',
