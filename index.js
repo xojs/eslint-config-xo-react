@@ -137,6 +137,7 @@ module.exports = {
 				ignoreCase: true
 			}
 		],
+		'react/jsx-no-script-url': 'error',
 		'react/jsx-no-target-blank': 'error',
 		'react/jsx-no-undef': 'error',
 		'react/jsx-no-useless-fragment': 'error',
