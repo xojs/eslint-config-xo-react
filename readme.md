@@ -1,4 +1,4 @@
-# eslint-config-xo-react [![Build Status](https://travis-ci.org/xojs/eslint-config-xo-react.svg?branch=master)](https://travis-ci.org/xojs/eslint-config-xo-react)
+# eslint-config-xo-react [![Build Status](https://travis-ci.com/xojs/eslint-config-xo-react.svg?branch=master)](https://travis-ci.com/github/xojs/eslint-config-xo-react)
 
 > ESLint [shareable config](http://eslint.org/docs/developer-guide/shareable-configs.html) for React to be used with [eslint-config-xo](https://github.com/xojs/eslint-config-xo)
 
