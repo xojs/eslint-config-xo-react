@@ -132,6 +132,7 @@ module.exports = {
 			}
 		],
 		'react/jsx-no-comment-textnodes': 'error',
+		'react/jsx-no-constructed-context-values': 'error',
 		'react/jsx-no-duplicate-props': [
 			'error',
 			{
