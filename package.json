@@ -14,6 +14,7 @@
 		"node": ">=10"
 	},
 	"scripts": {
+		"//": "TODO: Fix tests",
 		"test": "ava"
 	},
 	"files": [
@@ -53,15 +54,15 @@
 	"devDependencies": {
 		"ava": "^2.1.0",
 		"eslint": "^7.1.0",
-		"eslint-plugin-react": "^7.20.0",
+		"eslint-plugin-react": "^7.22.0",
 		"eslint-plugin-react-hooks": "^4.0.4",
-		"is-plain-obj": "^2.1.0",
-		"react": "^16.13.1",
+		"is-plain-obj": "^3.0.0",
+		"react": "^17.0.1",
 		"temp-write": "^4.0.0"
 	},
 	"peerDependencies": {
 		"eslint": ">=7",
-		"eslint-plugin-react": ">=7.20.0",
-		"eslint-plugin-react-hooks": ">=4.0.4"
+		"eslint-plugin-react": ">=7.22.0",
+		"eslint-plugin-react-hooks": ">=4.2.0"
 	}
 }

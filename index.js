@@ -114,7 +114,8 @@ module.exports = {
 		'react/jsx-key': [
 			'error',
 			{
-				checkFragmentShorthand: true
+				checkFragmentShorthand: true,
+				checkKeyMustBeforeSpread: true
 			}
 		],
 		'react/jsx-max-props-per-line': [
