@@ -139,7 +139,12 @@ module.exports = {
 			}
 		],
 		'react/jsx-no-script-url': 'error',
-		'react/jsx-no-target-blank': 'error',
+		'react/jsx-no-target-blank': [
+			'error',
+			{
+				warnOnSpreadAttributes: true
+			}
+		],
 		'react/jsx-no-undef': 'error',
 		'react/jsx-no-useless-fragment': 'error',
 		// Disabled for now as it produces too many errors
