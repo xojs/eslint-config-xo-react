@@ -72,7 +72,15 @@ module.exports = {
 			'never'
 		],
 		'react/static-property-placement': 'error',
-		'react/style-prop-object': 'error',
+		'react/style-prop-object': [
+			'error',
+			{
+				allow: [
+					// This allows react-intl’s `<FormattedNumber value={0.42} style='percent'/>`.
+					'FormattedNumber'
+				]
+			}
+		],
 		'react/void-dom-elements-no-children': 'error',
 		'react/jsx-boolean-value': 'error',
 		'react/jsx-closing-bracket-location': [
