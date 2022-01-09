@@ -4,8 +4,8 @@
 
 ## Install
 
-```
-$ npm install --save-dev eslint-config-xo eslint-config-xo-react eslint-plugin-react eslint-plugin-react-hooks
+```sh
+npm install --save-dev eslint-config-xo eslint-config-xo-react eslint-plugin-react eslint-plugin-react-hooks
 ```
 
 ## Usage

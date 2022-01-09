@@ -1,42 +1,43 @@
 import test from 'ava';
 import isPlainObj from 'is-plain-obj';
-import tempWrite from 'temp-write';
-import eslint from 'eslint';
+import {ESLint} from 'eslint';
 
 const hasRule = (errors, ruleId) => errors.some(error => error.ruleId === ruleId);
 
-function runEslint(string, config) {
-	const linter = new eslint.CLIEngine({
+async function runEslint(string, config) {
+	const eslint = new ESLint({
 		useEslintrc: false,
-		configFile: tempWrite.sync(JSON.stringify(config))
+		overrideConfig: config,
 	});
 
-	return linter.executeOnText(string).results[0].messages;
+	const [firstResult] = await eslint.lintText(string);
+
+	return firstResult.messages;
 }
 
-test('main', t => {
-	const config = require('../space');
+test('main', async t => {
+	const config = require('../space.js');
 
 	t.true(isPlainObj(config));
 	t.true(isPlainObj(config.rules));
 
-	const errors = runEslint('var app = <div className="foo">Unicorn</div>', config);
+	const errors = await runEslint('var app = <div className="foo">Unicorn</div>', config);
 	t.true(hasRule(errors, 'react/react-in-jsx-scope'));
 });
 
-test('space', t => {
-	const config = require('../space');
+test('space', async t => {
+	const config = require('../space.js');
 
 	t.true(isPlainObj(config));
 	t.true(isPlainObj(config.rules));
 
-	const errors = runEslint('<App>\n\t<Hello/>\n</App>', config);
+	const errors = await runEslint('<App>\n\t<Hello/>\n</App>', config);
 	t.true(hasRule(errors, 'react/jsx-indent'));
 });
 
-test('no errors', t => {
-	const config = require('..');
+test('no errors', async t => {
+	const config = require('../index.js');
 
-	const errors = runEslint('var React = require(\'react\');\nvar el = <div/>;', config);
+	const errors = await runEslint('var React = require(\'react\');\nvar el = <div/>;', config);
 	t.deepEqual(errors, []);
 });

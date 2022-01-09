@@ -11,12 +11,10 @@
 		"url": "https://sindresorhus.com"
 	},
 	"engines": {
-		"node": ">=10"
+		"node": ">=12"
 	},
 	"scripts": {
-		"//": "TODO: Fix tests",
-		"// test": "ava",
-		"test": "true"
+		"test": "ava"
 	},
 	"files": [
 		"index.js",
@@ -53,17 +51,16 @@
 		"simple"
 	],
 	"devDependencies": {
-		"ava": "^2.1.0",
-		"eslint": "^7.1.0",
-		"eslint-plugin-react": "^7.22.0",
-		"eslint-plugin-react-hooks": "^4.0.4",
+		"ava": "^2.4.0",
+		"eslint": "^8.6.0",
+		"eslint-plugin-react": "^7.28.0",
+		"eslint-plugin-react-hooks": "^4.3.0",
 		"is-plain-obj": "^3.0.0",
-		"react": "^17.0.1",
-		"temp-write": "^4.0.0"
+		"react": "^17.0.2"
 	},
 	"peerDependencies": {
-		"eslint": ">=7",
-		"eslint-plugin-react": ">=7.22.0",
-		"eslint-plugin-react-hooks": ">=4.2.0"
+		"eslint": ">=8.6.0",
+		"eslint-plugin-react": ">=7.28.0",
+		"eslint-plugin-react-hooks": ">=4.3.0"
 	}
 }
