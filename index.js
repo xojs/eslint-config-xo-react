@@ -151,7 +151,8 @@ module.exports = {
 		'react/jsx-no-target-blank': [
 			'error',
 			{
-				warnOnSpreadAttributes: true
+				warnOnSpreadAttributes: true,
+				forms: true
 			}
 		],
 		'react/jsx-no-undef': 'error',
