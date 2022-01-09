@@ -33,6 +33,7 @@ module.exports = {
 		],
 		'react/no-access-state-in-setstate': 'error',
 		'react/no-array-index-key': 'error',
+		'react/no-arrow-function-lifecycle': 'error',
 		'react/no-children-prop': 'error',
 		'react/no-danger': 'error',
 		'react/no-danger-with-children': 'error',
