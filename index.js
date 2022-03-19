@@ -165,7 +165,11 @@ module.exports = {
 		// 'react/jsx-one-expression-per-line': ['error', {allow: 'single-child'}],
 		'react/jsx-curly-brace-presence': [
 			'error',
-			'never'
+			{
+				props: 'never',
+				children: 'never',
+				propElementValues: 'always'
+			}
 		],
 		'react/jsx-fragments': [
 			'error',
