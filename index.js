@@ -32,6 +32,7 @@ module.exports = {
 			}
 		],
 		'react/hook-use-state': 'error',
+		'react/iframe-missing-sandbox': 'error',
 		'react/no-access-state-in-setstate': 'error',
 		'react/no-array-index-key': 'error',
 		'react/no-arrow-function-lifecycle': 'error',
