@@ -128,7 +128,8 @@ module.exports = {
 			'error',
 			{
 				checkFragmentShorthand: true,
-				checkKeyMustBeforeSpread: true
+				checkKeyMustBeforeSpread: true,
+				warnOnDuplicates: true
 			}
 		],
 		'react/jsx-max-props-per-line': [
