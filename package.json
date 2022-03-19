@@ -53,14 +53,14 @@
 	"devDependencies": {
 		"ava": "^2.4.0",
 		"eslint": "^8.6.0",
-		"eslint-plugin-react": "^7.28.0",
+		"eslint-plugin-react": "^7.29.0",
 		"eslint-plugin-react-hooks": "^4.3.0",
 		"is-plain-obj": "^3.0.0",
 		"react": "^17.0.2"
 	},
 	"peerDependencies": {
 		"eslint": ">=8.6.0",
-		"eslint-plugin-react": ">=7.28.0",
+		"eslint-plugin-react": ">=7.29.0",
 		"eslint-plugin-react-hooks": ">=4.3.0"
 	}
 }
