@@ -1,16 +1,14 @@
-'use strict';
-const path = require('path');
+import configs from './index.js';
 
-module.exports = {
-	extends: path.join(__dirname, 'index.js'),
-	rules: {
-		'react/jsx-indent-props': [
-			'error',
-			2
-		],
-		'react/jsx-indent': [
-			'error',
-			2
-		]
-	}
-};
+const [config] = configs;
+
+export default [
+	{
+		...config,
+		rules: {
+			...config.rules,
+			'react/jsx-indent-props': ['error', 2],
+			'react/jsx-indent': ['error', 2],
+		},
+	},
+];

@@ -1,12 +1,13 @@
 import test from 'ava';
-import isPlainObj from 'is-plain-obj';
+import eslintConfigXoReact from '../index.js';
+import eslintConfigXoReactSpace from '../space.js';
 import {ESLint} from 'eslint';
 
 const hasRule = (errors, ruleId) => errors.some(error => error.ruleId === ruleId);
 
 async function runEslint(string, config) {
 	const eslint = new ESLint({
-		useEslintrc: false,
+		overrideConfigFile: true,
 		overrideConfig: config,
 	});
 
@@ -16,28 +17,20 @@ async function runEslint(string, config) {
 }
 
 test('main', async t => {
-	const config = require('../space.js');
+	t.true(Array.isArray(eslintConfigXoReact));
 
-	t.true(isPlainObj(config));
-	t.true(isPlainObj(config.rules));
-
-	const errors = await runEslint('var app = <div className="foo">Unicorn</div>', config);
+	const errors = await runEslint('var app = <div className="foo">Unicorn</div>', eslintConfigXoReact);
 	t.true(hasRule(errors, 'react/react-in-jsx-scope'));
 });
 
 test('space', async t => {
-	const config = require('../space.js');
+	t.true(Array.isArray(eslintConfigXoReactSpace));
 
-	t.true(isPlainObj(config));
-	t.true(isPlainObj(config.rules));
-
-	const errors = await runEslint('<App>\n\t<Hello/>\n</App>', config);
+	const errors = await runEslint('<App>\n\t<Hello/>\n</App>', eslintConfigXoReactSpace);
 	t.true(hasRule(errors, 'react/jsx-indent'));
 });
 
 test('no errors', async t => {
-	const config = require('../index.js');
-
-	const errors = await runEslint('var React = require(\'react\');\nvar el = <div/>;', config);
+	const errors = await runEslint('var React = require(\'react\');\nvar el = <div/>;', eslintConfigXoReact);
 	t.deepEqual(errors, []);
 });

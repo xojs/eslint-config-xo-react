@@ -10,11 +10,16 @@
 		"email": "sindresorhus@gmail.com",
 		"url": "https://sindresorhus.com"
 	},
+	"type": "module",
 	"engines": {
 		"node": ">=12"
 	},
 	"scripts": {
 		"test": "ava"
+	},
+	"exports": {
+		".": "./index.js",
+		"./space": "./space.js"
 	},
 	"files": [
 		"index.js",
@@ -51,16 +56,15 @@
 		"simple"
 	],
 	"devDependencies": {
-		"ava": "^2.4.0",
-		"eslint": "^8.6.0",
+		"ava": "^6.2.0",
+		"eslint": "^9.18.0",
 		"eslint-plugin-react": "^7.29.0",
-		"eslint-plugin-react-hooks": "^4.3.0",
-		"is-plain-obj": "^3.0.0",
+		"eslint-plugin-react-hooks": "^5.1.0",
 		"react": "^17.0.2"
 	},
 	"peerDependencies": {
-		"eslint": ">=8.6.0",
+		"eslint": ">=9.18.0",
 		"eslint-plugin-react": ">=7.29.0",
-		"eslint-plugin-react-hooks": ">=4.3.0"
+		"eslint-plugin-react-hooks": ">=5.1.0"
 	}
 }

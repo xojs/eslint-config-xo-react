@@ -10,51 +10,37 @@ npm install --save-dev eslint-config-xo eslint-config-xo-react eslint-plugin-rea
 
 ## Usage
 
-Add some ESLint config to your package.json:
+Add some ESLint config to your `eslint.config.js`:
 
-```json
-{
-	"name": "my-awesome-project",
-	"eslintConfig": {
-		"extends": [
-			"xo",
-			"xo-react"
-		]
-	}
-}
-```
+```js
+// eslint.config.js
+import xo from 'eslint-config-xo';
+import xoReact from 'eslint-config-xo-react';
 
-Or to .eslintrc:
-
-```json
-{
-	"extends": [
-		"xo",
-		"xo-react"
-	]
-}
+export default [...xo, ...xoReact];
 ```
 
 Use the `space` sub-config if you want 2 space indentation instead of tabs:
 
-```json
-{
-	"extends": [
-		"xo",
-		"xo-react/space"
-	]
-}
+```js
+// eslint.config.js
+import xo from 'eslint-config-xo';
+import xoReactSpace from 'eslint-config-xo-react/space';
+
+export default [...xo, ...xoReactSpace];
 ```
 
-You can also mix it with a [XO](https://github.com/xojs/xo) sub-config:
+You can also mix it with a [eslint-config-xo](https://github.com/xojs/eslint-config-xo) sub-config:
 
-```json
-{
-	"extends": [
-		"xo/esnext",
-		"xo-react"
-	]
-}
+```js
+// eslint.config.js
+import xoSpace from 'eslint-config-xo/space';
+import xoReactSpace from 'eslint-config-xo-react/space';
+
+export default [
+	...xoSpace,
+	...xoReactSpace
+];
 ```
 
 ## Tip
