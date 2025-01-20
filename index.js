@@ -29,11 +29,9 @@ export default [
 					validateNested: true,
 				},
 			],
-
 			'react/button-has-type': 'error',
 			'react/jsx-child-element-spacing': 'error',
 			'react/default-props-match-prop-types': 'error',
-
 			'react/function-component-definition': [
 				'error',
 				{
@@ -41,7 +39,6 @@ export default [
 					unnamedComponents: 'arrow-function',
 				},
 			],
-
 			'react/hook-use-state': 'error',
 			'react/iframe-missing-sandbox': 'error',
 			'react/no-access-state-in-setstate': 'error',
@@ -60,14 +57,12 @@ export default [
 			'react/no-redundant-should-component-update': 'error',
 			'react/no-render-return-value': 'error',
 			'react/no-typos': 'error',
-
 			'react/no-string-refs': [
 				'error',
 				{
 					noTemplateLiterals: true,
 				},
 			],
-
 			'react/no-this-in-sfc': 'error',
 			'react/no-unescaped-entities': 'error',
 			'react/no-unknown-property': 'error',
@@ -77,7 +72,6 @@ export default [
 			'react/prefer-read-only-props': 'error',
 			'react/prop-types': 'error',
 			'react/react-in-jsx-scope': 'error',
-
 			'react/require-default-props': [
 				'error',
 				{
@@ -85,21 +79,20 @@ export default [
 					ignoreFunctionalComponents: true,
 				},
 			],
-
 			'react/self-closing-comp': 'error',
 			'react/state-in-constructor': ['error', 'never'],
 			'react/static-property-placement': 'error',
-
 			'react/style-prop-object': [
 				'error',
 				{
-					allow: ['FormattedNumber'],
+					allow: [
+						// This allows react-intl’s `<FormattedNumber value={0.42} style='percent'/>`.
+						'FormattedNumber',
+					],
 				},
 			],
-
 			'react/void-dom-elements-no-children': 'error',
 			'react/jsx-boolean-value': 'error',
-
 			'react/jsx-closing-bracket-location': [
 				'error',
 				{
@@ -107,9 +100,7 @@ export default [
 					selfClosing: false,
 				},
 			],
-
 			'react/jsx-closing-tag-location': 'error',
-
 			'react/jsx-curly-newline': [
 				'error',
 				{
@@ -117,11 +108,9 @@ export default [
 					singleline: 'forbid',
 				},
 			],
-
 			'react/jsx-curly-spacing': ['error', 'never'],
 			'react/jsx-equals-spacing': ['error', 'never'],
 			'react/jsx-first-prop-new-line': 'error',
-
 			'react/jsx-indent': [
 				'error',
 				'tab',
@@ -130,9 +119,7 @@ export default [
 					indentLogicalExpressions: true,
 				},
 			],
-
 			'react/jsx-indent-props': ['error', 'tab'],
-
 			'react/jsx-key': [
 				'error',
 				{
@@ -141,7 +128,6 @@ export default [
 					warnOnDuplicates: true,
 				},
 			],
-
 			'react/jsx-max-props-per-line': [
 				'error',
 				{
@@ -149,26 +135,21 @@ export default [
 					when: 'multiline',
 				},
 			],
-
 			'react/jsx-no-bind': [
 				'error',
 				{
 					allowArrowFunctions: true,
 				},
 			],
-
 			'react/jsx-no-comment-textnodes': 'error',
 			'react/jsx-no-constructed-context-values': 'error',
-
 			'react/jsx-no-duplicate-props': [
 				'error',
 				{
 					ignoreCase: true,
 				},
 			],
-
 			'react/jsx-no-script-url': 'error',
-
 			'react/jsx-no-target-blank': [
 				'error',
 				{
@@ -176,10 +157,10 @@ export default [
 					forms: true,
 				},
 			],
-
 			'react/jsx-no-undef': 'error',
 			'react/jsx-no-useless-fragment': 'error',
-
+			// Disabled for now as it produces too many errors
+			// 'react/jsx-one-expression-per-line': ['error', {allow: 'single-child'}],
 			'react/jsx-curly-brace-presence': [
 				'error',
 				{
@@ -188,11 +169,9 @@ export default [
 					propElementValues: 'always',
 				},
 			],
-
 			'react/jsx-fragments': ['error', 'syntax'],
 			'react/jsx-pascal-case': 'error',
 			'react/jsx-props-no-multi-spaces': 'error',
-
 			'react/jsx-sort-props': [
 				'error',
 				{
@@ -202,7 +181,6 @@ export default [
 					reservedFirst: true,
 				},
 			],
-
 			'react/jsx-tag-spacing': [
 				'error',
 				{
@@ -212,10 +190,8 @@ export default [
 					beforeClosing: 'never',
 				},
 			],
-
 			'react/jsx-uses-react': 'error',
 			'react/jsx-uses-vars': 'error',
-
 			'react/jsx-wrap-multilines': [
 				'error',
 				{
