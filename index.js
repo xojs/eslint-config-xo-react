@@ -146,6 +146,15 @@ export default [
 					ignoreCase: true,
 				},
 			],
+			'react/jsx-no-leaked-render': [
+				'error',
+				{
+					validStrategies: [
+						'ternary',
+						'coerce',
+					],
+				},
+			],
 			'react/jsx-no-script-url': 'error',
 			'react/jsx-no-target-blank': [
 				'error',
