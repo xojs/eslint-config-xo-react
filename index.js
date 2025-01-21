@@ -30,6 +30,7 @@ export default [
 			'react/checked-requires-onchange-or-readonly': 'error',
 			'react/jsx-child-element-spacing': 'error',
 			'react/default-props-match-prop-types': 'error',
+			'react/forward-ref-uses-ref': 'error',
 			'react/function-component-definition': [
 				'error',
 				{
