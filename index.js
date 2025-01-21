@@ -7,7 +7,6 @@ export default [
 			react,
 			'react-hooks': reactHooks,
 		},
-
 		languageOptions: {
 			parserOptions: {
 				ecmaFeatures: {
@@ -15,13 +14,11 @@ export default [
 				},
 			},
 		},
-
 		settings: {
 			react: {
 				version: 'detect',
 			},
 		},
-
 		rules: {
 			'react/boolean-prop-naming': [
 				'error',
