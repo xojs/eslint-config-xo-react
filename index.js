@@ -27,6 +27,7 @@ export default [
 				},
 			],
 			'react/button-has-type': 'error',
+			'react/checked-requires-onchange-or-readonly': 'error',
 			'react/jsx-child-element-spacing': 'error',
 			'react/default-props-match-prop-types': 'error',
 			'react/function-component-definition': [
