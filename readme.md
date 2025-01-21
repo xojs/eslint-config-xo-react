@@ -5,7 +5,7 @@
 ## Install
 
 ```sh
-npm install --save-dev eslint-config-xo eslint-config-xo-react eslint-plugin-react eslint-plugin-react-hooks
+npm install --save-dev eslint-config-xo eslint-config-xo-react
 ```
 
 ## Usage
@@ -13,27 +13,18 @@ npm install --save-dev eslint-config-xo eslint-config-xo-react eslint-plugin-rea
 Add some ESLint config to your `eslint.config.js`:
 
 ```js
-// eslint.config.js
 import xo from 'eslint-config-xo';
 import xoReact from 'eslint-config-xo-react';
 
-export default [...xo, ...xoReact];
+export default [
+	...xo,
+	...xoReact
+];
 ```
 
 Use the `space` sub-config if you want 2 space indentation instead of tabs:
 
 ```js
-// eslint.config.js
-import xo from 'eslint-config-xo';
-import xoReactSpace from 'eslint-config-xo-react/space';
-
-export default [...xo, ...xoReactSpace];
-```
-
-You can also mix it with a [eslint-config-xo](https://github.com/xojs/eslint-config-xo) sub-config:
-
-```js
-// eslint.config.js
 import xoSpace from 'eslint-config-xo/space';
 import xoReactSpace from 'eslint-config-xo-react/space';
 
@@ -43,12 +34,12 @@ export default [
 ];
 ```
 
-## Tip
+<!-- ## Tip
 
 ### Use with XO
 
-```
-$ npm install --save-dev eslint-config-xo-react eslint-plugin-react eslint-plugin-react-hooks
+```sh
+npm install --save-dev eslint-config-xo-react eslint-plugin-react eslint-plugin-react-hooks
 ```
 
 ```json
@@ -58,7 +49,7 @@ $ npm install --save-dev eslint-config-xo-react eslint-plugin-react eslint-plugi
 		"extends": "xo-react"
 	}
 }
-```
+``` -->
 
 ## Related
 
