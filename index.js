@@ -185,6 +185,7 @@ export default [
 			'react/jsx-fragments': ['error', 'syntax'],
 			'react/jsx-pascal-case': 'error',
 			'react/jsx-props-no-multi-spaces': 'error',
+			'react/jsx-props-no-spread-multi': 'error',
 			'react/jsx-sort-props': [
 				'error',
 				{
