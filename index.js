@@ -70,7 +70,12 @@ export default [
 			],
 			'react/no-this-in-sfc': 'error',
 			'react/no-unescaped-entities': 'error',
-			'react/no-unknown-property': 'error',
+			'react/no-unknown-property': [
+				'error',
+				{
+					requireDataLowercase: true,
+				},
+			],
 			'react/no-unsafe': 'error',
 			'react/no-unused-prop-types': 'error',
 			'react/no-unused-state': 'error',
@@ -163,7 +168,12 @@ export default [
 					],
 				},
 			],
-			'react/jsx-no-script-url': 'error',
+			'react/jsx-no-script-url': [
+				'error',
+				{
+					includeFromSettings: true,
+				},
+			],
 			'react/jsx-no-target-blank': [
 				'error',
 				{
