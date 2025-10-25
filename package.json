@@ -58,7 +58,7 @@
 	],
 	"dependencies": {
 		"eslint-plugin-react": "^7.37.4",
-		"eslint-plugin-react-hooks": "^5.1.0"
+		"eslint-plugin-react-hooks": "^7.0.1"
 	},
 	"devDependencies": {
 		"ava": "^6.2.0",
