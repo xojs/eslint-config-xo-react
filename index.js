@@ -81,7 +81,7 @@ export default [
 			'react/no-unused-state': 'error',
 			'react/prefer-read-only-props': 'error',
 			'react/prop-types': 'error',
-			'react/react-in-jsx-scope': 'error',
+			'react/react-in-jsx-scope': 'off',
 			'react/require-default-props': [
 				'error',
 				{
