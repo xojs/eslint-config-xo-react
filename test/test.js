@@ -1,6 +1,5 @@
 import test from 'ava';
 import eslintConfigXoReact from '../index.js';
-import eslintConfigXoReactSpace from '../space.js';
 import {ESLint} from 'eslint';
 
 const hasRule = (errors, ruleId) => errors.some(error => error.ruleId === ruleId);
@@ -17,20 +16,27 @@ async function runEslint(string, config) {
 }
 
 test('main', async t => {
-	t.true(Array.isArray(eslintConfigXoReact));
+	const config = eslintConfigXoReact();
+	t.true(Array.isArray(config));
 
-	const errors = await runEslint('<div dangerouslySetInnerHTML={{__html: "foo"}}/>', eslintConfigXoReact);
+	const errors = await runEslint('<div dangerouslySetInnerHTML={{__html: "foo"}}/>', config);
 	t.true(hasRule(errors, 'react/no-danger'));
 });
 
 test('space', async t => {
-	t.true(Array.isArray(eslintConfigXoReactSpace));
+	const fixture = '<App\n\tfoo="bar"\n/>';
 
-	const errors = await runEslint('<App foo = "bar"/>', eslintConfigXoReactSpace);
-	t.true(hasRule(errors, 'react/jsx-equals-spacing'));
+	const config = eslintConfigXoReact({space: true});
+	t.true(Array.isArray(config));
+
+	const errors = await runEslint(fixture, config);
+	t.true(hasRule(errors, 'react/jsx-indent-props'));
+
+	const defaultErrors = await runEslint(fixture, eslintConfigXoReact());
+	t.false(hasRule(defaultErrors, 'react/jsx-indent-props'));
 });
 
 test('no errors', async t => {
-	const errors = await runEslint('var React = require(\'react\');\nvar el = <div/>;', eslintConfigXoReact);
+	const errors = await runEslint('var React = require(\'react\');\nvar el = <div/>;', eslintConfigXoReact());
 	t.deepEqual(errors, []);
 });

@@ -12,8 +12,8 @@
 	},
 	"type": "module",
 	"exports": {
-		".": "./index.js",
-		"./space": "./space.js"
+		"types": "./index.d.ts",
+		"default": "./index.js"
 	},
 	"sideEffects": false,
 	"engines": {
@@ -24,7 +24,7 @@
 	},
 	"files": [
 		"index.js",
-		"space.js"
+		"index.d.ts"
 	],
 	"keywords": [
 		"react",

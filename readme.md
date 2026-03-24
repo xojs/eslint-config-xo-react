@@ -13,24 +13,28 @@ npm install --save-dev eslint-config-xo eslint-config-xo-react
 Add some ESLint config to your `eslint.config.js`:
 
 ```js
-import xo from 'eslint-config-xo';
-import xoReact from 'eslint-config-xo-react';
+import eslintConfigXo from 'eslint-config-xo';
+import eslintConfigXoReact from 'eslint-config-xo-react';
 
 export default [
-	...xo,
-	...xoReact
+	...eslintConfigXo(),
+	...eslintConfigXoReact(),
 ];
 ```
 
-Use the `space` sub-config if you want 2 space indentation instead of tabs:
+### Options
+
+#### space
+
+Type: `boolean | number`\
+Default: `false`
+
+Use spaces for indentation instead of tabs for JSX props. Set to `true` for 2 spaces, or a number for a custom count.
 
 ```js
-import xoSpace from 'eslint-config-xo/space';
-import xoReactSpace from 'eslint-config-xo-react/space';
-
 export default [
-	...xoSpace,
-	...xoReactSpace
+	...eslintConfigXo({space: true}),
+	...eslintConfigXoReact({space: true}),
 ];
 ```
 
