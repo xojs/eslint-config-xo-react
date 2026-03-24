@@ -8,7 +8,6 @@ export default [
 		rules: {
 			...config.rules,
 			'react/jsx-indent-props': ['error', 2],
-			'react/jsx-indent': ['error', 2],
 		},
 	},
 ];

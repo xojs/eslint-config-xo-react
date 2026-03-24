@@ -19,15 +19,15 @@ async function runEslint(string, config) {
 test('main', async t => {
 	t.true(Array.isArray(eslintConfigXoReact));
 
-	const errors = await runEslint('var app = <div className="foo">Unicorn</div>', eslintConfigXoReact);
-	t.true(hasRule(errors, 'react/react-in-jsx-scope'));
+	const errors = await runEslint('<div dangerouslySetInnerHTML={{__html: "foo"}}/>', eslintConfigXoReact);
+	t.true(hasRule(errors, 'react/no-danger'));
 });
 
 test('space', async t => {
 	t.true(Array.isArray(eslintConfigXoReactSpace));
 
-	const errors = await runEslint('<App>\n\t<Hello/>\n</App>', eslintConfigXoReactSpace);
-	t.true(hasRule(errors, 'react/jsx-indent'));
+	const errors = await runEslint('<App foo = "bar"/>', eslintConfigXoReactSpace);
+	t.true(hasRule(errors, 'react/jsx-equals-spacing'));
 });
 
 test('no errors', async t => {

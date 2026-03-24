@@ -121,14 +121,8 @@ export default [
 			'react/jsx-curly-spacing': ['error', 'never'],
 			'react/jsx-equals-spacing': ['error', 'never'],
 			'react/jsx-first-prop-new-line': 'error',
-			'react/jsx-indent': [
-				'error',
-				'tab',
-				{
-					checkAttributes: true,
-					indentLogicalExpressions: true,
-				},
-			],
+			// Handled by `@stylistic/indent`.
+			'react/jsx-indent': 'off',
 			'react/jsx-indent-props': ['error', 'tab'],
 			'react/jsx-key': [
 				'error',
