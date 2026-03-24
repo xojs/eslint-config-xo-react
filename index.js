@@ -19,7 +19,7 @@ export default function eslintConfigXoReact({space = false} = {}) {
 			},
 			settings: {
 				react: {
-					version: 'detect',
+					version: '19',
 				},
 			},
 			rules: {
