@@ -232,7 +232,6 @@ export default function eslintConfigXoReact({space = false} = {}) {
 				'react-hooks/static-components': 'error',
 				'react-hooks/use-memo': 'error',
 				'react-hooks/void-use-memo': 'error',
-				'react-hooks/component-hook-factories': 'error',
 				'react-hooks/preserve-manual-memoization': 'error',
 				'react-hooks/incompatible-library': 'warn',
 				'react-hooks/immutability': 'error',
