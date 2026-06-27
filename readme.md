@@ -15,11 +15,12 @@ Add some ESLint config to your `eslint.config.js`:
 ```js
 import eslintConfigXo from 'eslint-config-xo';
 import eslintConfigXoReact from 'eslint-config-xo-react';
+import {defineConfig} from 'eslint/config';
 
-export default [
+export default defineConfig([
 	...eslintConfigXo(),
 	...eslintConfigXoReact(),
-];
+]);
 ```
 
 ### Options
@@ -32,10 +33,10 @@ Default: `false`
 Use spaces for indentation instead of tabs for JSX props. Set to `true` for 2 spaces, or a number for a custom count.
 
 ```js
-export default [
+export default defineConfig([
 	...eslintConfigXo({space: true}),
 	...eslintConfigXoReact({space: true}),
-];
+]);
 ```
 
 <!-- ## Tip
