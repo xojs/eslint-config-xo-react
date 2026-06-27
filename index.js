@@ -6,6 +6,7 @@ export default function eslintConfigXoReact({space = false} = {}) {
 
 	return [
 		{
+			name: 'xo/react',
 			files: ['**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}'],
 			// Type-definition files never contain JSX and require a TypeScript parser, so don't apply React rules to them. This mirrors `eslint-config-xo`, which also excludes them when no TypeScript parser is available.
 			ignores: ['**/*.d.{ts,mts,cts}'],
