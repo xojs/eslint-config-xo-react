@@ -1,3 +1,4 @@
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 
@@ -10,6 +11,7 @@ export default function eslintConfigXoReact({space = false} = {}) {
 			// Type-definition files never contain JSX and require a TypeScript parser, so don't apply React rules to them. This mirrors `eslint-config-xo`, which also excludes them when no TypeScript parser is available.
 			ignores: ['**/*.d.{ts,mts,cts}'],
 			plugins: {
+				'jsx-a11y': jsxA11y,
 				react,
 				'react-hooks': reactHooks,
 			},
@@ -26,6 +28,7 @@ export default function eslintConfigXoReact({space = false} = {}) {
 				},
 			},
 			rules: {
+				...jsxA11y.flatConfigs.strict.rules,
 				'react/boolean-prop-naming': [
 					'error',
 					{
