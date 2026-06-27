@@ -64,3 +64,10 @@ test('only applies to JSX-capable files', async t => {
 	// …nor onto type-definition files, which never contain JSX and need a TypeScript parser.
 	t.false(await hasReactRule('foo.d.ts'));
 });
+
+test('jsx-a11y', async t => {
+	const config = eslintConfigXoReact();
+
+	const errors = await runEslint('<img src="foo"/>', config);
+	t.true(hasRule(errors, 'jsx-a11y/alt-text'));
+})
