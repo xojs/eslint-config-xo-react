@@ -1,25 +1,29 @@
-import react from 'eslint-plugin-react';
+import react from '@eslint-react/eslint-plugin';
 import reactHooks from 'eslint-plugin-react-hooks';
+// Keep the version range in lockstep with `eslint-config-xo`. Both register this plugin under the `@stylistic` namespace, and ESLint throws if the two resolve to different copies.
+import stylistic from '@stylistic/eslint-plugin';
+import perfectionist from 'eslint-plugin-perfectionist';
 
 const files = ['**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}'];
+
+const typescriptFiles = ['**/*.{ts,tsx,mts,cts}'];
 
 // Type-definition files never contain JSX and require a TypeScript parser, so don't apply React rules to them. This mirrors `eslint-config-xo`, which also excludes them when no TypeScript parser is available.
 const ignores = ['**/*.d.{ts,mts,cts}'];
 
 // Rules that Prettier formats itself. Kept in sync with `eslint-config-prettier` by a test.
 const prettierConflictingRules = Object.fromEntries([
-	'react/jsx-child-element-spacing',
-	'react/jsx-closing-bracket-location',
-	'react/jsx-closing-tag-location',
-	'react/jsx-curly-newline',
-	'react/jsx-curly-spacing',
-	'react/jsx-equals-spacing',
-	'react/jsx-first-prop-new-line',
-	'react/jsx-indent-props',
-	'react/jsx-max-props-per-line',
-	'react/jsx-props-no-multi-spaces',
-	'react/jsx-tag-spacing',
-	'react/jsx-wrap-multilines',
+	'@stylistic/jsx-child-element-spacing',
+	'@stylistic/jsx-closing-bracket-location',
+	'@stylistic/jsx-closing-tag-location',
+	'@stylistic/jsx-curly-newline',
+	'@stylistic/jsx-curly-spacing',
+	'@stylistic/jsx-equals-spacing',
+	'@stylistic/jsx-first-prop-new-line',
+	'@stylistic/jsx-indent-props',
+	'@stylistic/jsx-max-props-per-line',
+	'@stylistic/jsx-tag-spacing',
+	'@stylistic/jsx-wrap-multilines',
 ].map(ruleId => [ruleId, 'off']));
 
 export default function eslintConfigXoReact({space = false, prettier = false} = {}) {
@@ -31,8 +35,10 @@ export default function eslintConfigXoReact({space = false, prettier = false} = 
 			files,
 			ignores,
 			plugins: {
-				react,
+				'@eslint-react': react,
 				'react-hooks': reactHooks,
+				'@stylistic': stylistic,
+				perfectionist,
 			},
 			languageOptions: {
 				parserOptions: {
@@ -42,214 +48,90 @@ export default function eslintConfigXoReact({space = false, prettier = false} = 
 				},
 			},
 			settings: {
-				react: {
+				'react-x': {
 					version: '19',
 				},
 			},
 			rules: {
-				'react/boolean-prop-naming': [
-					'error',
-					{
-						validateNested: true,
-					},
-				],
-				'react/button-has-type': 'error',
-				'react/checked-requires-onchange-or-readonly': 'error',
-				'react/jsx-child-element-spacing': 'error',
-				'react/default-props-match-prop-types': 'error',
-				'react/forward-ref-uses-ref': 'error',
-				'react/function-component-definition': [
-					'error',
-					{
-						namedComponents: 'function-declaration',
-						unnamedComponents: 'arrow-function',
-					},
-				],
-				'react/hook-use-state': [
-					'error',
-					{
-						allowDestructuredState: true,
-					},
-				],
-				'react/iframe-missing-sandbox': 'error',
-				'react/no-access-state-in-setstate': 'error',
-				'react/no-array-index-key': 'error',
-				'react/no-arrow-function-lifecycle': 'error',
-				'react/no-children-prop': 'error',
-				'react/no-danger': 'error',
-				'react/no-danger-with-children': 'error',
-				'react/no-deprecated': 'error',
-				'react/no-did-update-set-state': 'error',
-				'react/no-direct-mutation-state': 'error',
-				'react/no-find-dom-node': 'error',
-				'react/no-invalid-html-attribute': 'error',
-				'react/no-is-mounted': 'error',
-				'react/no-namespace': 'error',
-				'react/no-object-type-as-default-prop': 'error',
-				'react/no-redundant-should-component-update': 'error',
-				'react/no-render-return-value': 'error',
-				'react/no-typos': 'error',
-				'react/no-string-refs': [
-					'error',
-					{
-						noTemplateLiterals: true,
-					},
-				],
-				'react/no-this-in-sfc': 'error',
-				'react/no-unescaped-entities': 'error',
-				'react/no-unknown-property': [
+				'@eslint-react/dom-no-dangerously-set-innerhtml': 'error',
+				'@eslint-react/dom-no-dangerously-set-innerhtml-with-children': 'error',
+				'@eslint-react/dom-no-find-dom-node': 'error',
+				'@eslint-react/dom-no-flush-sync': 'error',
+				'@eslint-react/dom-no-hydrate': 'error',
+				'@eslint-react/dom-no-missing-button-type': 'error',
+				'@eslint-react/dom-no-missing-iframe-sandbox': 'error',
+				'@eslint-react/dom-no-render': 'error',
+				'@eslint-react/dom-no-render-return-value': 'error',
+				'@eslint-react/dom-no-script-url': 'error',
+				'@eslint-react/dom-no-string-style-prop': 'error',
+				'@eslint-react/dom-no-unknown-property': [
 					'error',
 					{
 						requireDataLowercase: true,
 					},
 				],
-				'react/no-unsafe': 'error',
-				'react/no-unused-prop-types': 'error',
-				'react/no-unused-state': 'error',
-				'react/prefer-read-only-props': 'error',
-				'react/prop-types': 'error',
-				'react/react-in-jsx-scope': 'off',
-				'react/require-default-props': [
-					'error',
-					{
-						forbidDefaultForRequired: true,
-						ignoreFunctionalComponents: true,
-					},
-				],
-				'react/self-closing-comp': 'error',
-				'react/state-in-constructor': ['error', 'never'],
-				'react/static-property-placement': 'error',
-				'react/style-prop-object': [
-					'error',
-					{
-						allow: [
-							// This allows react-intl's `<FormattedNumber value={0.42} style='percent'/>`.
-							'FormattedNumber',
-						],
-					},
-				],
-				'react/void-dom-elements-no-children': 'error',
-				'react/jsx-boolean-value': 'error',
-				'react/jsx-closing-bracket-location': [
-					'error',
-					{
-						nonEmpty: 'tag-aligned',
-						selfClosing: false,
-					},
-				],
-				'react/jsx-closing-tag-location': 'error',
-				'react/jsx-curly-newline': [
-					'error',
-					{
-						multiline: 'consistent',
-						singleline: 'forbid',
-					},
-				],
-				'react/jsx-curly-spacing': ['error', 'never'],
-				'react/jsx-equals-spacing': ['error', 'never'],
-				'react/jsx-first-prop-new-line': 'error',
-				// Handled by `@stylistic/indent`.
-				'react/jsx-indent': 'off',
-				'react/jsx-indent-props': ['error', indentProps],
-				'react/jsx-key': [
-					'error',
-					{
-						checkFragmentShorthand: true,
-						checkKeyMustBeforeSpread: true,
-						warnOnDuplicates: true,
-					},
-				],
-				'react/jsx-max-props-per-line': [
-					'error',
-					{
-						maximum: 3,
-						when: 'multiline',
-					},
-				],
-				'react/jsx-no-bind': [
-					'error',
-					{
-						allowArrowFunctions: true,
-					},
-				],
-				'react/jsx-no-comment-textnodes': 'error',
-				'react/jsx-no-constructed-context-values': 'error',
-				'react/jsx-no-duplicate-props': [
-					'error',
-					{
-						ignoreCase: true,
-					},
-				],
-				'react/jsx-no-leaked-render': [
-					'error',
-					{
-						validStrategies: [
-							'ternary',
-							'coerce',
-						],
-					},
-				],
-				'react/jsx-no-script-url': [
-					'error',
-					{
-						includeFromSettings: true,
-					},
-				],
-				'react/jsx-no-target-blank': [
-					'error',
-					{
-						warnOnSpreadAttributes: true,
-						forms: true,
-					},
-				],
-				'react/jsx-no-undef': 'error',
-				'react/jsx-no-useless-fragment': 'error',
-				// Disabled for now as it produces too many errors
-				// 'react/jsx-one-expression-per-line': ['error', {allow: 'single-child'}],
-				'react/jsx-curly-brace-presence': [
-					'error',
-					{
-						props: 'never',
-						children: 'never',
-						propElementValues: 'always',
-					},
-				],
-				'react/jsx-fragments': ['error', 'syntax'],
-				'react/jsx-pascal-case': 'error',
-				'react/jsx-props-no-multi-spaces': 'error',
-				'react/jsx-props-no-spread-multi': 'error',
-				'react/jsx-sort-props': [
-					'error',
-					{
-						callbacksLast: true,
-						shorthandFirst: true,
-						noSortAlphabetically: true,
-						reservedFirst: true,
-					},
-				],
-				'react/jsx-tag-spacing': [
-					'error',
-					{
-						closingSlash: 'never',
-						beforeSelfClosing: 'never',
-						afterOpening: 'never',
-						beforeClosing: 'never',
-					},
-				],
-				'react/jsx-uses-react': 'error',
-				'react/jsx-uses-vars': 'error',
-				'react/jsx-wrap-multilines': [
-					'error',
-					{
-						declaration: 'parens-new-line',
-						assignment: 'parens-new-line',
-						return: 'parens-new-line',
-						arrow: 'parens-new-line',
-						condition: 'ignore',
-						logical: 'ignore',
-						prop: 'ignore',
-					},
-				],
+				'@eslint-react/dom-no-unsafe-iframe-sandbox': 'error',
+				'@eslint-react/dom-no-unsafe-target-blank': 'error',
+				'@eslint-react/dom-no-use-form-state': 'error',
+				'@eslint-react/dom-no-void-elements-with-children': 'error',
+
+				'@eslint-react/jsx-no-children-prop': 'error',
+				'@eslint-react/jsx-no-children-prop-with-children': 'error',
+				'@eslint-react/jsx-no-comment-textnodes': 'error',
+				'@eslint-react/jsx-no-key-after-spread': 'error',
+				'@eslint-react/jsx-no-leaked-dollar': 'error',
+				'@eslint-react/jsx-no-leaked-semicolon': 'error',
+				'@eslint-react/jsx-no-namespace': 'error',
+				'@eslint-react/jsx-no-useless-fragment': 'error',
+
+				'@eslint-react/naming-convention-context-name': 'error',
+				'@eslint-react/naming-convention-id-name': 'error',
+				'@eslint-react/naming-convention-ref-name': 'error',
+
+				'@eslint-react/no-access-state-in-setstate': 'error',
+				'@eslint-react/no-array-index-key': 'error',
+				'@eslint-react/no-children-count': 'error',
+				'@eslint-react/no-children-for-each': 'error',
+				'@eslint-react/no-children-map': 'error',
+				'@eslint-react/no-children-only': 'error',
+				'@eslint-react/no-children-to-array': 'error',
+				'@eslint-react/no-class-component': 'error',
+				'@eslint-react/no-clone-element': 'error',
+				'@eslint-react/no-component-will-mount': 'error',
+				'@eslint-react/no-component-will-receive-props': 'error',
+				'@eslint-react/no-component-will-update': 'error',
+				'@eslint-react/no-context-provider': 'error',
+				'@eslint-react/no-create-ref': 'error',
+				'@eslint-react/no-direct-mutation-state': 'error',
+				'@eslint-react/no-duplicate-key': 'error',
+				'@eslint-react/no-forward-ref': 'error',
+				'@eslint-react/no-missing-key': 'error',
+				'@eslint-react/no-misused-capture-owner-stack': 'error',
+				// Overlaps with `react-hooks/static-components`, but neither is a superset: only this one catches components nested in a class `render()`, and only that one catches components defined inside a hook.
+				'@eslint-react/no-nested-component-definitions': 'error',
+				'@eslint-react/no-nested-lazy-component-declarations': 'error',
+				'@eslint-react/no-set-state-in-component-did-mount': 'error',
+				'@eslint-react/no-set-state-in-component-did-update': 'error',
+				'@eslint-react/no-set-state-in-component-will-update': 'error',
+				'@eslint-react/no-unnecessary-use-prefix': 'error',
+				'@eslint-react/no-unsafe-component-will-mount': 'error',
+				'@eslint-react/no-unsafe-component-will-receive-props': 'error',
+				'@eslint-react/no-unsafe-component-will-update': 'error',
+				'@eslint-react/no-unstable-context-value': 'error',
+				'@eslint-react/no-unstable-default-props': 'error',
+				'@eslint-react/no-unused-class-component-members': 'error',
+				'@eslint-react/no-unused-state': 'error',
+				'@eslint-react/no-use-context': 'error',
+				'@eslint-react/use-state': 'error',
+
+				'@eslint-react/rsc-function-definition': 'error',
+
+				'@eslint-react/web-api-no-leaked-event-listener': 'error',
+				'@eslint-react/web-api-no-leaked-fetch': 'error',
+				'@eslint-react/web-api-no-leaked-intersection-observer': 'error',
+				'@eslint-react/web-api-no-leaked-interval': 'error',
+				'@eslint-react/web-api-no-leaked-resize-observer': 'error',
+				'@eslint-react/web-api-no-leaked-timeout': 'error',
 
 				'react-hooks/rules-of-hooks': 'error',
 				'react-hooks/exhaustive-deps': 'warn',
@@ -268,6 +150,97 @@ export default function eslintConfigXoReact({space = false, prettier = false} = 
 				'react-hooks/unsupported-syntax': 'warn',
 				'react-hooks/config': 'error',
 				'react-hooks/gating': 'error',
+
+				'@stylistic/jsx-child-element-spacing': 'error',
+				'@stylistic/jsx-closing-bracket-location': [
+					'error',
+					{
+						nonEmpty: 'tag-aligned',
+						selfClosing: false,
+					},
+				],
+				'@stylistic/jsx-closing-tag-location': 'error',
+				'@stylistic/jsx-curly-brace-presence': [
+					'error',
+					{
+						props: 'never',
+						children: 'never',
+						propElementValues: 'always',
+					},
+				],
+				'@stylistic/jsx-curly-newline': [
+					'error',
+					{
+						multiline: 'consistent',
+						singleline: 'forbid',
+					},
+				],
+				'@stylistic/jsx-curly-spacing': ['error', 'never'],
+				'@stylistic/jsx-equals-spacing': ['error', 'never'],
+				'@stylistic/jsx-first-prop-new-line': 'error',
+				'@stylistic/jsx-indent-props': ['error', indentProps],
+				'@stylistic/jsx-max-props-per-line': [
+					'error',
+					{
+						maximum: 3,
+						when: 'multiline',
+					},
+				],
+				// Disabled for now as it produces too many errors
+				// '@stylistic/jsx-one-expression-per-line': ['error', {allow: 'single-child'}],
+				'@stylistic/jsx-pascal-case': 'error',
+				'@stylistic/jsx-self-closing-comp': 'error',
+				'@stylistic/jsx-tag-spacing': [
+					'error',
+					{
+						closingSlash: 'never',
+						beforeSelfClosing: 'never',
+						afterOpening: 'never',
+						beforeClosing: 'never',
+					},
+				],
+				'@stylistic/jsx-wrap-multilines': [
+					'error',
+					{
+						declaration: 'parens-new-line',
+						assignment: 'parens-new-line',
+						return: 'parens-new-line',
+						arrow: 'parens-new-line',
+						condition: 'ignore',
+						logical: 'ignore',
+						prop: 'ignore',
+					},
+				],
+
+				// `@stylistic/jsx-sort-props` is deprecated in favor of this.
+				'perfectionist/sort-jsx-props': [
+					'error',
+					{
+						type: 'unsorted',
+						groups: ['reserved', 'shorthand-prop', 'unknown', 'callback'],
+						customGroups: [
+							{
+								groupName: 'reserved',
+								elementNamePattern: '^(?:children|dangerouslySetInnerHTML|key|ref)$',
+							},
+							{
+								groupName: 'callback',
+								elementNamePattern: '^on[A-Z]',
+							},
+						],
+					},
+				],
+			},
+		},
+		// These rules need type information, which `eslint-config-xo` sets up for TypeScript files.
+		{
+			name: 'xo/react/typescript',
+			files: typescriptFiles,
+			ignores,
+			rules: {
+				'@eslint-react/no-leaked-conditional-rendering': 'error',
+				// TODO: Enable when it's no longer experimental. The plugin excludes it from its own `recommended-type-checked` preset, and it false-positives on computed prop access like `props[key]`.
+				// '@eslint-react/no-unused-props': 'error',
 			},
 		},
 		// Must come last so it overrides the stylistic rules above.

@@ -17,7 +17,7 @@
 	},
 	"sideEffects": false,
 	"engines": {
-		"node": ">=18.18"
+		"node": ">=22"
 	},
 	"scripts": {
 		"test": "eslint && ava"
@@ -57,16 +57,18 @@
 		"simple"
 	],
 	"dependencies": {
-		"eslint-plugin-react": "^7.37.5",
-		"eslint-plugin-react-hooks": "^7.0.1"
+		"@eslint-react/eslint-plugin": "^5.20.5",
+		"@stylistic/eslint-plugin": "^5.10.0",
+		"eslint-plugin-perfectionist": "^5.11.1",
+		"eslint-plugin-react-hooks": "^7.1.1"
 	},
 	"devDependencies": {
-		"ava": "^6.4.1",
-		"eslint": "^9.38.0",
+		"ava": "^8.0.1",
+		"eslint": "^10.11.0",
 		"eslint-config-prettier": "^10.1.8",
-		"react": "^19.2.0"
+		"react": "^19.3.0"
 	},
 	"peerDependencies": {
-		"eslint": ">=9.18.0"
+		"eslint": ">=10.4"
 	}
 }
