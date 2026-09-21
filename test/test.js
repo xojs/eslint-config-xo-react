@@ -1,6 +1,7 @@
 import test from 'ava';
-import eslintConfigXoReact from '../index.js';
 import {ESLint} from 'eslint';
+import eslintConfigPrettier from 'eslint-config-prettier';
+import eslintConfigXoReact from '../index.js';
 
 const hasRule = (errors, ruleId) => errors.some(error => error.ruleId === ruleId);
 
@@ -63,4 +64,31 @@ test('only applies to JSX-capable files', async t => {
 	t.false(await hasReactRule('package.json'));
 	// …nor onto type-definition files, which never contain JSX and need a TypeScript parser.
 	t.false(await hasReactRule('foo.d.ts'));
+});
+
+test('prettier', async t => {
+	const fixture = '<App\n\tfoo="bar"\n/>';
+
+	const errors = await runEslint(fixture, eslintConfigXoReact({space: true, prettier: 'compat'}));
+	t.false(hasRule(errors, 'react/jsx-indent-props'));
+
+	// Non-stylistic rules are untouched.
+	const dangerErrors = await runEslint('<div dangerouslySetInnerHTML={{__html: "foo"}}/>', eslintConfigXoReact({prettier: 'compat'}));
+	t.true(hasRule(dangerErrors, 'react/no-danger'));
+
+	// `true` behaves the same as `'compat'`.
+	t.deepEqual(eslintConfigXoReact({prettier: true}), eslintConfigXoReact({prettier: 'compat'}));
+
+	// Disabled by default.
+	const defaultErrors = await runEslint(fixture, eslintConfigXoReact({space: true}));
+	t.true(hasRule(defaultErrors, 'react/jsx-indent-props'));
+});
+
+test('prettier - in sync with eslint-config-prettier', t => {
+	const rules = Object.assign({}, ...eslintConfigXoReact({prettier: 'compat'}).map(config => config.rules));
+
+	const stillEnabled = Object.keys(rules)
+		.filter(ruleId => eslintConfigPrettier.rules[ruleId] !== undefined && rules[ruleId] !== 'off');
+
+	t.deepEqual(stillEnabled, []);
 });

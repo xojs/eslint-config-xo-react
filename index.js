@@ -1,15 +1,35 @@
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 
-export default function eslintConfigXoReact({space = false} = {}) {
+const files = ['**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}'];
+
+// Type-definition files never contain JSX and require a TypeScript parser, so don't apply React rules to them. This mirrors `eslint-config-xo`, which also excludes them when no TypeScript parser is available.
+const ignores = ['**/*.d.{ts,mts,cts}'];
+
+// Rules that Prettier formats itself. Kept in sync with `eslint-config-prettier` by a test.
+const prettierConflictingRules = Object.fromEntries([
+	'react/jsx-child-element-spacing',
+	'react/jsx-closing-bracket-location',
+	'react/jsx-closing-tag-location',
+	'react/jsx-curly-newline',
+	'react/jsx-curly-spacing',
+	'react/jsx-equals-spacing',
+	'react/jsx-first-prop-new-line',
+	'react/jsx-indent-props',
+	'react/jsx-max-props-per-line',
+	'react/jsx-props-no-multi-spaces',
+	'react/jsx-tag-spacing',
+	'react/jsx-wrap-multilines',
+].map(ruleId => [ruleId, 'off']));
+
+export default function eslintConfigXoReact({space = false, prettier = false} = {}) {
 	const indentProps = space ? (typeof space === 'number' ? space : 2) : 'tab';
 
 	return [
 		{
 			name: 'xo/react',
-			files: ['**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}'],
-			// Type-definition files never contain JSX and require a TypeScript parser, so don't apply React rules to them. This mirrors `eslint-config-xo`, which also excludes them when no TypeScript parser is available.
-			ignores: ['**/*.d.{ts,mts,cts}'],
+			files,
+			ignores,
 			plugins: {
 				react,
 				'react-hooks': reactHooks,
@@ -250,5 +270,12 @@ export default function eslintConfigXoReact({space = false} = {}) {
 				'react-hooks/gating': 'error',
 			},
 		},
+		// Must come last so it overrides the stylistic rules above.
+		...(prettier ? [{
+			name: 'xo/react/prettier',
+			files,
+			ignores,
+			rules: prettierConflictingRules,
+		}] : []),
 	];
 }
