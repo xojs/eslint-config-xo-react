@@ -104,6 +104,19 @@ test('only applies to JSX-capable files', async t => {
 	t.false(await hasReactRule('foo.d.ts'));
 });
 
+test('closing brackets stay reachable with tabs', async t => {
+	const config = eslintConfigXoReact();
+
+	// The opening tag sits mid-line, so aligning with `<` would need spaces no tab count can express. https://github.com/xojs/eslint-config-xo-react/issues/31
+	const errors = await runEslint('const a = (\n\t<>\n\t\t{via ? <div style={{\n\t\t\tdisplay: \'flex\',\n\t\t}}\n\t\t>\n\t\t\t<div>{destination}</div>\n\t\t</div> : <span>{longName}</span>}\n\t</>\n);\n', config);
+	t.false(hasRule(errors, '@stylistic/jsx-closing-bracket-location'));
+	t.false(hasRule(errors, '@stylistic/jsx-closing-tag-location'));
+
+	// A bracket that is not aligned with the opening tag's line is still caught.
+	const misalignedErrors = await runEslint('const a = (\n\t<Hello\n\t\tfirstName="John"\n\t\t\t>\n\t\tHi\n\t</Hello>\n);\n', config);
+	t.true(hasRule(misalignedErrors, '@stylistic/jsx-closing-bracket-location'));
+});
+
 test('prettier', async t => {
 	const fixture = '<App\n\tfoo="bar"\n/>';
 

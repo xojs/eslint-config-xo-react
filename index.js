@@ -152,14 +152,15 @@ export default function eslintConfigXoReact({space = false, prettier = false} = 
 				'react-hooks/gating': 'error',
 
 				'@stylistic/jsx-child-element-spacing': 'error',
+				// `line-aligned` instead of `tag-aligned` because an opening tag that starts mid-line (for example, after `{condition ? `) would have to align with a column that no number of tabs can reach. Aligning with the opening tag's line is always representable. https://github.com/xojs/eslint-config-xo-react/issues/31
 				'@stylistic/jsx-closing-bracket-location': [
 					'error',
 					{
-						nonEmpty: 'tag-aligned',
+						nonEmpty: 'line-aligned',
 						selfClosing: false,
 					},
 				],
-				'@stylistic/jsx-closing-tag-location': 'error',
+				'@stylistic/jsx-closing-tag-location': ['error', 'line-aligned'],
 				'@stylistic/jsx-curly-brace-presence': [
 					'error',
 					{
