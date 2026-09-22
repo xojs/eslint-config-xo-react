@@ -104,6 +104,18 @@ test('only applies to JSX-capable files', async t => {
 	t.false(await hasReactRule('foo.d.ts'));
 });
 
+test('accessibility', async t => {
+	const config = eslintConfigXoReact();
+
+	const errors = await runEslint('<img src="foo.png"/>', config);
+	t.true(hasRule(errors, 'jsx-a11y-x/alt-text'));
+
+	// The rules that guess at interactivity are deliberately left out.
+	const interactionErrors = await runEslint('<div onClick={f}/>', config);
+	t.false(hasRule(interactionErrors, 'jsx-a11y-x/click-events-have-key-events'));
+	t.false(hasRule(interactionErrors, 'jsx-a11y-x/no-static-element-interactions'));
+});
+
 test('closing brackets stay reachable with tabs', async t => {
 	const config = eslintConfigXoReact();
 

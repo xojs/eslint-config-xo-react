@@ -81,8 +81,32 @@ Pass the same [`space`](#space) and [`prettier`](#prettier) values you use in yo
 
 - [`@eslint-react/eslint-plugin`](https://github.com/Rel1cx/eslint-react)
 - [`eslint-plugin-react-hooks`](https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks)
+- [`eslint-plugin-jsx-a11y-x`](https://github.com/es-tooling/eslint-plugin-jsx-a11y-x)
 - [`eslint-plugin-perfectionist`](https://github.com/azat-io/eslint-plugin-perfectionist)
 - [`@stylistic/eslint-plugin`](https://github.com/eslint-stylistic/eslint-stylistic)
+
+## Accessibility
+
+Accessibility rules come from [`eslint-plugin-jsx-a11y-x`](https://github.com/es-tooling/eslint-plugin-jsx-a11y-x), a maintained fork of `eslint-plugin-jsx-a11y`. The rules are prefixed with `jsx-a11y-x/`.
+
+Only the rules that can be decided from the markup alone are enabled. The rules that guess at whether an element is meant to be interactive are left out, as they cannot see through component wrappers and do not apply to React Native. Enable those yourself if they suit your project.
+
+If you wrap native elements in your own components, map them so the rules can see through the wrapper:
+
+```js
+export default defineConfig([
+	...eslintConfigXoReact(),
+	{
+		settings: {
+			'jsx-a11y-x': {
+				components: {
+					TextField: 'input',
+				},
+			},
+		},
+	},
+]);
+```
 
 ## Related
 

@@ -1,5 +1,6 @@
 import react from '@eslint-react/eslint-plugin';
 import reactHooks from 'eslint-plugin-react-hooks';
+import jsxA11y from 'eslint-plugin-jsx-a11y-x';
 // Keep the version range in lockstep with `eslint-config-xo`. Both register this plugin under the `@stylistic` namespace, and ESLint throws if the two resolve to different copies.
 import stylistic from '@stylistic/eslint-plugin';
 import perfectionist from 'eslint-plugin-perfectionist';
@@ -37,6 +38,7 @@ export default function eslintConfigXoReact({space = false, prettier = false} = 
 			plugins: {
 				'@eslint-react': react,
 				'react-hooks': reactHooks,
+				'jsx-a11y-x': jsxA11y,
 				'@stylistic': stylistic,
 				perfectionist,
 			},
@@ -150,6 +152,36 @@ export default function eslintConfigXoReact({space = false, prettier = false} = 
 				'react-hooks/unsupported-syntax': 'warn',
 				'react-hooks/config': 'error',
 				'react-hooks/gating': 'error',
+
+				// Only the rules that can be decided from the markup alone. Left out: the rules that guess at whether an element is meant to be interactive (`click-events-have-key-events`, `control-has-associated-label`, `interactive-supports-focus`, `mouse-events-have-key-events`, `no-noninteractive-element-interactions`, `no-static-element-interactions`), because they cannot see through component wrappers and do not apply at all to React Native; `prefer-tag-over-role`, because the tag a role maps to depends on ancestors the rule does not look at; and `anchor-ambiguous-text`, because it judges wording rather than markup. https://github.com/xojs/eslint-config-xo-react/issues/17
+				'jsx-a11y-x/alt-text': 'error',
+				'jsx-a11y-x/anchor-has-content': 'error',
+				'jsx-a11y-x/anchor-is-valid': 'error',
+				'jsx-a11y-x/aria-activedescendant-has-tabindex': 'error',
+				'jsx-a11y-x/aria-props': 'error',
+				'jsx-a11y-x/aria-proptypes': 'error',
+				'jsx-a11y-x/aria-role': 'error',
+				'jsx-a11y-x/aria-unsupported-elements': 'error',
+				'jsx-a11y-x/autocomplete-valid': 'error',
+				'jsx-a11y-x/heading-has-content': 'error',
+				'jsx-a11y-x/html-has-lang': 'error',
+				'jsx-a11y-x/iframe-has-title': 'error',
+				'jsx-a11y-x/img-redundant-alt': 'error',
+				'jsx-a11y-x/label-has-associated-control': 'error',
+				'jsx-a11y-x/lang': 'error',
+				'jsx-a11y-x/media-has-caption': 'error',
+				'jsx-a11y-x/no-access-key': 'error',
+				'jsx-a11y-x/no-aria-hidden-on-focusable': 'error',
+				'jsx-a11y-x/no-autofocus': 'error',
+				'jsx-a11y-x/no-distracting-elements': 'error',
+				'jsx-a11y-x/no-interactive-element-to-noninteractive-role': 'error',
+				'jsx-a11y-x/no-noninteractive-element-to-interactive-role': 'error',
+				'jsx-a11y-x/no-noninteractive-tabindex': 'error',
+				'jsx-a11y-x/no-redundant-roles': 'error',
+				'jsx-a11y-x/role-has-required-aria-props': 'error',
+				'jsx-a11y-x/role-supports-aria-props': 'error',
+				'jsx-a11y-x/scope': 'error',
+				'jsx-a11y-x/tabindex-no-positive': 'error',
 
 				'@stylistic/jsx-child-element-spacing': 'error',
 				// `line-aligned` instead of `tag-aligned` because an opening tag that starts mid-line (for example, after `{condition ? `) would have to align with a column that no number of tabs can reach. Aligning with the opening tag's line is always representable. https://github.com/xojs/eslint-config-xo-react/issues/31
