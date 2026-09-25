@@ -20,7 +20,7 @@
 		"node": ">=22"
 	},
 	"scripts": {
-		"test": "eslint && ava"
+		"test": "eslint && node --test"
 	},
 	"files": [
 		"index.js",
@@ -57,17 +57,16 @@
 		"simple"
 	],
 	"dependencies": {
-		"@eslint-react/eslint-plugin": "^5.20.5",
-		"@stylistic/eslint-plugin": "^5.10.0",
+		"@eslint-react/eslint-plugin": "^5.30.4",
+		"@stylistic/eslint-plugin": "^6.0.1",
 		"eslint-plugin-jsx-a11y-x": "^0.2.0",
-		"eslint-plugin-perfectionist": "^5.11.1",
+		"eslint-plugin-perfectionist": "^5.14.0",
 		"eslint-plugin-react-hooks": "^7.1.1"
 	},
 	"devDependencies": {
-		"ava": "^8.0.1",
-		"eslint": "^10.11.0",
+		"eslint": "^10.15.0",
 		"eslint-config-prettier": "^10.1.8",
-		"react": "^19.3.0"
+		"react": "^19.3.1"
 	},
 	"peerDependencies": {
 		"eslint": ">=10.4"

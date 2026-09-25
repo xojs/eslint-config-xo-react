@@ -223,6 +223,8 @@ export default function eslintConfigXoReact({space = false, prettier = false} = 
 				// '@stylistic/jsx-one-expression-per-line': ['error', {allow: 'single-child'}],
 				'@stylistic/jsx-pascal-case': 'error',
 				'@stylistic/jsx-self-closing-comp': 'error',
+				'@stylistic/jsx-shorthand-boolean': 'error',
+				'@stylistic/jsx-shorthand-fragment': 'error',
 				'@stylistic/jsx-tag-spacing': [
 					'error',
 					{
