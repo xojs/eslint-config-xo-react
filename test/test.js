@@ -39,7 +39,7 @@ test('space', async () => {
 });
 
 test('no errors', async () => {
-	const errors = await runEslint('var React = require(\'react\');\nvar el = <div/>;', eslintConfigXoReact());
+	const errors = await runEslint('var React = require(\'react\');\nvar element = <div/>;', eslintConfigXoReact());
 	assert.deepEqual(errors, []);
 });
 
@@ -176,4 +176,15 @@ test('prettier - in sync with eslint-config-prettier', () => {
 	const stale = turnedOff.filter(ruleId => enabledRules[ruleId] === undefined);
 
 	assert.deepEqual(stale, []);
+});
+
+test('allows React naming conventions', async () => {
+	const config = eslintConfigXoReact();
+
+	const errors = await runEslint('function App(props) {\n\tconst ref = useRef();\n\tconst inputRef = useRef();\n\tconst refs = [ref, inputRef];\n\tconst params = useParams();\n\tconst prop = props.name;\n\tconst items = refs.map(param => param);\n\tsetCount(prevCount => prevCount + props.step);\n\treturn <input ref={inputRef} data-params={params} data-prop={prop} data-items={items}/>;\n}\n', config);
+	assert.ok(!hasRule(errors, 'unicorn/name-replacements'));
+
+	// The other default replacements still apply.
+	const abbreviationErrors = await runEslint('const btn = <button type="button"/>;', config);
+	assert.ok(hasRule(abbreviationErrors, 'unicorn/name-replacements'));
 });

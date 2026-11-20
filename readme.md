@@ -84,6 +84,7 @@ Pass the same [`space`](#space) and [`prettier`](#prettier) values you use in yo
 - [`eslint-plugin-jsx-a11y-x`](https://github.com/es-tooling/eslint-plugin-jsx-a11y-x)
 - [`eslint-plugin-perfectionist`](https://github.com/azat-io/eslint-plugin-perfectionist)
 - [`@stylistic/eslint-plugin`](https://github.com/eslint-stylistic/eslint-stylistic)
+- [`eslint-plugin-unicorn`](https://github.com/sindresorhus/eslint-plugin-unicorn) (only to allow React naming conventions like `props` and `ref` in `unicorn/name-replacements`)
 
 ## Accessibility
 

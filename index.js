@@ -4,6 +4,8 @@ import jsxA11y from 'eslint-plugin-jsx-a11y-x';
 // Keep the version range in lockstep with `eslint-config-xo`. Both register this plugin under the `@stylistic` namespace, and ESLint throws if the two resolve to different copies.
 import stylistic from '@stylistic/eslint-plugin';
 import perfectionist from 'eslint-plugin-perfectionist';
+// Keep the version range in lockstep with `eslint-config-xo`, for the same reason as `@stylistic` above.
+import unicorn from 'eslint-plugin-unicorn';
 
 const files = ['**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}'];
 
@@ -41,6 +43,7 @@ export default function eslintConfigXoReact({space = false, prettier = false} = 
 				'jsx-a11y-x': jsxA11y,
 				'@stylistic': stylistic,
 				perfectionist,
+				unicorn,
 			},
 			languageOptions: {
 				parserOptions: {
@@ -263,6 +266,22 @@ export default function eslintConfigXoReact({space = false, prettier = false} = 
 								elementNamePattern: '^on[A-Z]',
 							},
 						],
+					},
+				],
+
+				// Allow the abbreviations that are React conventions, like `props`, `ref`, `prevState`, and route `params`. https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/name-replacements.md#react
+				'unicorn/name-replacements': [
+					'error',
+					{
+						replacements: {
+							param: false,
+							params: false,
+							prev: false,
+							prop: false,
+							props: false,
+							ref: false,
+							refs: false,
+						},
 					},
 				],
 			},
